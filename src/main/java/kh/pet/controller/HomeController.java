@@ -30,5 +30,8 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
-	
+	@RequestMapping("community")
+	public String community() {
+		return "/";
+	}
 }
