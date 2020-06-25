@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Messages">
+	<resultMap type="kh.pet.dto.MessageDTO" id="recievemessage">
+		<result property="msg_seq" column="rmsg_seq"/>
+		<result property="msg_sender" column="rmsg_sender"/>
+		<result property="msg_reciever" column="rmsg_reciever"/>
+		<result property="msg_title" column="rmsg_title"/>
+		<result property="msg_contents" column="rmsg_contents"/>
+		<result property="msg_date" column="rmsg_date"/>
+		<result property="msg_status" column="rmsg_status"/>
+	</resultMap>
+	
+	<resultMap type="kh.pet.dto.MessageDTO" id="sendmessage">
+		<result property="msg_seq" column="smsg_seq"/>
+		<result property="msg_sender" column="smsg_sender"/>
+		<result property="msg_reciever" column="smsg_reciever"/>
+		<result property="msg_title" column="smsg_title"/>
+		<result property="msg_contents" column="smsg_contents"/>
+		<result property="msg_date" column="smsg_date"/>
+		<result property="msg_status" column="smsg_status"/>
+	</resultMap>	
+	
+	
+	<insert id="send">
+		insert into send_message values(msg_seq.nextval,#{msg_sender},#{msg_reciever},#{msg_title},#{msg_contents},sysdate,'안 읽음')
+	</insert>
+	
+	<insert id="recieve">
+		insert into recieve_message values(msg_seq.CURRVAL,#{msg_sender},#{msg_reciever},#{msg_title},#{msg_contents},sysdate,'New')
+	</insert>
+	
+
+	<select id="search" resultType="int">
+		select count(*) from mem where id = #{value} 
+	</select>
+	
+	<select id="sendlist" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
+		select * from send_message where smsg_sender=#{value}
+	</select>
+	
+	<select id="sendview" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
+		select * from send_message where smsg_seq=#{value}
+	</select>
+	
+	<select id="recievelist" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">
+		select * from recieve_message where rmsg_reciever=#{value}
+	</select>
+	
+	<select id="recieveview" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">
+		select * from recieve_message where rmsg_seq=#{value}
+	</select>
+	
+	<update id="recievefirstView">
+		update recieve_message set RMSG_STATUS = '안 읽음' where RMSG_STATUS = 'New' and rmsg_reciever=#{value}
+	</update>
+	
+	<update id="recieveSecendView">
+		update recieve_message set RMSG_STATUS = '읽음' where RMSG_STATUS = '안 읽음' and rmsg_seq=#{value}
+	</update>
+	
+	<update id="sendfirstView">
+		update send_message set SMSG_STATUS = '읽음' where smsg_status = '안 읽음' and smsg_seq=#{value}
+	</update>
+	
+	<delete id="senddelete">
+		delete from send_message where smsg_seq=#{value}
+	</delete>
+	
+	<delete id="recievedelete">
+		delete from recieve_message where rmsg_seq=#{value}
+	</delete>
+	
+</mapper>
