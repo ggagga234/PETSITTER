@@ -1,6 +1,7 @@
 package kh.pet.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,23 @@ public class MessageDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
+	public int sendgetAritcleCount(String id) {
+		return mybatis.selectOne("Messages.sendgetCount",id);
+	}
+	
+	public List<MessageDTO> sendMessagelist(Map<String, Object> map) {
+		return mybatis.selectList("Messages.sendmessagelist", map);
+	}
+	
+	public int recievegetAritcleCount(String id) {
+		return mybatis.selectOne("Messages.recievegetCount",id);
+	}
+	
+	public List<MessageDTO> recieveMessagelist(Map<String, Object> map) {
+		return mybatis.selectList("Messages.recievemassagelist", map);
+	}
+	
+	
 	public int sendMessage(MessageDTO dto) {
 		return mybatis.insert("Messages.send",dto);
 	}
@@ -26,16 +44,8 @@ public class MessageDAO {
 		return mybatis.selectOne("Messages.search",dto.getMsg_reciever());
 	}
 	
-	public List<MessageDTO> sendlist(String id){ 
-		return mybatis.selectList("Messages.sendlist",id);
-	}
-	
 	public MessageDTO sendView(int seq) {
 		return mybatis.selectOne("Messages.sendview",seq);
-	}
-	
-	public List<MessageDTO> recievelist(String id){
-		return mybatis.selectList("Messages.recievelist",id);
 	}
 	
 	public MessageDTO recieveView(int seq) {

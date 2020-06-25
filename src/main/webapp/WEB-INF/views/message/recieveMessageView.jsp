@@ -34,8 +34,9 @@
         </div>
         <hr>
         <div class="col-12">
+         	<button id=reWrite>답장</button>
+         	<button id=newWrite>새 메세지 작성</button>
             <button id=delete>삭제</button>
-            <button id=newWrite>새 메세지 작성</button>
         </div>
         <hr>
         <div class="col-12">
@@ -58,11 +59,14 @@
     	location.href="/message/recievelist";
     })
     $("#newWrite").on("click", function() {
-		location.href = "/message/writepage";
+		location.href ="/message/writepage";
 	})
 	$("#delete").on("click", function() {
-		location.href = "/message/recievelist";
+		location.href = "/message/recievedelete?seq=${viewmessage.msg_seq}";
 	})
+	$("#reWrite").on("click",function(){
+    	location.href="/message/rewritepage";
+    })
     </script>
     
 </body>

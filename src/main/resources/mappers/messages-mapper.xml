@@ -21,7 +21,25 @@
 		<result property="msg_status" column="smsg_status"/>
 	</resultMap>	
 	
+	<select id="sendmessagelist" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
+		select * from (select send_message.* , row_number() over(order by smsg_seq desc)rnum from send_message where smsg_sender=#{id}) where rnum between ${start} and ${end}
+	</select>
 	
+	
+	<select id="sendgetCount" resultType="int">
+		select count(*) from send_message where smsg_sender=#{value}
+	</select>
+	
+	<select id="recievemassagelist" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">
+		select * from (select recieve_message.* , row_number() over(order by rmsg_seq desc)rnum from recieve_message where rmsg_reciever=#{id}) where rnum between ${start} and ${end}
+	</select>
+	
+	
+	<select id="recievegetCount" resultType="int">
+		select count(*) from recieve_message where rmsg_reciever=#{value}
+	</select>
+	
+
 	<insert id="send">
 		insert into send_message values(msg_seq.nextval,#{msg_sender},#{msg_reciever},#{msg_title},#{msg_contents},sysdate,'안 읽음')
 	</insert>
@@ -35,16 +53,12 @@
 		select count(*) from mem where id = #{value} 
 	</select>
 	
-	<select id="sendlist" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
-		select * from send_message where smsg_sender=#{value}
-	</select>
-	
 	<select id="sendview" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
 		select * from send_message where smsg_seq=#{value}
 	</select>
 	
 	<select id="recievelist" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">
-		select * from recieve_message where rmsg_reciever=#{value}
+		select * from recieve_message where rmsg_reciever=#{value} order by rmsg_seq desc
 	</select>
 	
 	<select id="recieveview" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">

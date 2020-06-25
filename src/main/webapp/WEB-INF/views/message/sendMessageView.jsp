@@ -34,8 +34,8 @@
         </div>
         <hr>
         <div class="col-12">
-            <button id=delete>삭제</button>
-            <button id=newWrite>새 메세지 작성</button>
+       		<button id=newWrite>새 메세지 작성</button>
+            <button id=delete>삭제</button>            
         </div>
         <hr>
         <div class="col-12">
@@ -54,6 +54,7 @@
         </div>
     </div>
     <script>
+ 
     $("#back").on("click",function(){
     	location.href="/message/sendlist";
     })
@@ -61,7 +62,7 @@
 		location.href = "/message/writepage";
 	})
 	$("#delete").on("click", function() {
-		location.href = "/message/back";
+		location.href = "/message/senddelete?seq=${viewmessage.msg_seq}";
 	})
     </script>
     

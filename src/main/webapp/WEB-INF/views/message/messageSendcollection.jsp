@@ -68,7 +68,7 @@ hr {
 							<div class="col-2">${i.msg_date}</div>
 							<div class="col-2">${i.msg_status}</div>
 							<div class="col-2">
-								<button>삭제</button>
+								<button id="${i.msg_seq}" class=delete>삭제</button>
 							</div>
 							<hr>
 						</c:forEach>
@@ -76,6 +76,7 @@ hr {
 				</c:otherwise>
 			</c:choose>
 		</div>
+		<div class="col-12" style="text-align: center">${sendnavi}</div>
 	</div>
 	<script>
 		$("#write").on("click", function() {
@@ -86,6 +87,10 @@ hr {
 		})
 		$("#send").on("click", function() {
 			location.href = "/message/sendlist";
+		})
+		$(".delete").on("click",function(){
+			var seq = $(this).attr('id');
+			location.href = "/message/senddelete?seq="+seq;
 		})
 	</script>
 </body>
