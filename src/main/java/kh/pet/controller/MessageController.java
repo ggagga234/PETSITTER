@@ -55,6 +55,8 @@ public class MessageController {
 				out.println("<script>alert('받는 이를 확인해 주시길 바랍니다.'); history.go(-1);</script>");
 				out.flush();
 			}
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
