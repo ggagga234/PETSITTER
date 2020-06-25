@@ -17,18 +17,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	
-	@Autowired
-	private HttpSession session;
-	
-	@RequestMapping("/")
-	public String home(Locale locale, Model model) {
-		return "home";
-	}
-	@RequestMapping("login")
-	public String login(String id) {
-		session.setAttribute("id", id);
-		return "redirect:/";
-	}
-	
 	
 }
