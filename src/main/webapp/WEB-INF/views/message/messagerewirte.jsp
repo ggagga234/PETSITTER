@@ -76,8 +76,8 @@ hr {
 	</form>
 	<script>
 			$("#case").on("submit",function(){
-				if($("#msg_title").val()==""){
-					alert("제목을 입력해 주시길 바랍니다.");
+				if($("#msg_title").val().trim()==""){
+						
 					return false;
 				}else{
 					if($(".note-editable").html().trim()==""){
