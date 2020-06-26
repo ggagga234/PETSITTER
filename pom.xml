@@ -69,8 +69,7 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.0</version>
 		</dependency>
-		
-		
+
 		<!--file upload -->
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
@@ -86,7 +85,7 @@
 			<version>2.7</version>
 		</dependency>
 
-		
+
 
 		<!-- Spring -->
 		<dependency>

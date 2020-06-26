@@ -32,10 +32,14 @@ hr {
 	width: 98%;
 	margin: 5px;
 }
+.top{
+	background-color: #40e0d0;
+}
+
 </style>
 <body>
 	<div class="wrap row">
-		<div class="col-12">
+		<div  class="col-12 top">
 			<legend style="font-size: 30px">받은 메세지함</legend>
 		</div>
 		<hr>
@@ -77,7 +81,7 @@ hr {
 				</c:otherwise>
 			</c:choose>
 		</div>
-		<div class="col-12" style="text-align: center">${recievenavi}</div>
+		<div class="col-12" style="text-align: center; background-color: #40e0d0;">${recievenavi}</div>
 	</div>
 	<script>
 		$("#write").on("click", function() {

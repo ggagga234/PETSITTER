@@ -90,7 +90,7 @@ hr {
 				} 			
 			})
             $(document).ready(function() {
-                $('#summernote').summernote();
+                $('#summernote').summernote();z
             });
             $('#summernote').summernote({
                 height: 360,  

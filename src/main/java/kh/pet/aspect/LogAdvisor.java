@@ -5,6 +5,8 @@ import javax.servlet.http.HttpSession;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import kh.pet.staticInfo.Log_Count;
+
 public class LogAdvisor {
 	
 	@Autowired
@@ -15,9 +17,10 @@ public class LogAdvisor {
 			return "redirect:/";
 		}
 		else {
-			
 		}
 		Object re = pj.proceed();
 		return re;
 	}
+
+
 }
