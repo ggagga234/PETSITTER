@@ -71,7 +71,6 @@ hr {
 				<button>보내기</button>
 				<input type="button" value="돌아가기" id=back>
 			</div>
-
 		</div>
 	</form>
 	<script>

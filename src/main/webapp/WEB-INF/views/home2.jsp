@@ -19,11 +19,15 @@
 <c:otherwise>
 	${id}님 환영합니다.
 	<input type="button" value="메세지 함 가기" id="go">
+	<input type="button" value="관리자 페이지 가기" id="go2">
 </c:otherwise>
 </c:choose>
 <script>
 	$("#go").on("click",function(){
 		location.href="message/recievelist";
+	})
+	$("#go2").on("click",function(){
+		location.href="adminindex";
 	})
 </script>
 </body>

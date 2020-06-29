@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+.top{
+    height: 200px;
+    border: 1px black solid;
+}
+.bottom{
+    height: 200px;
+    border: 1px black solid;
+}
+.smenu{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+.maintitle{
+    height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 100px;
+    border-top: 1px #D6D6D6 solid;
+}
+.chart{
+    height: 320px;
+    border: 0.5px #D6D6D6 solid;
+}
+.table{
+    height: 800px;
+    margin: 0;
+
+}
+.lside{
+    border: 1px black solid;
+    color: white;
+}
+.lside_hide{
+    border: 1px #16C6FC solid;
+    width: 3%;
+    line-height: 800px;
+    text-align: center;
+    color: white
+}
+.wrap{
+    margin: 0px;
+}
+#nav{
+    display: none;
+}
+#navmenu{
+    display: none;
+}
+
+hr {
+	border: 1px solid #16C6FC;
+	width: 90%;
+	height: 0px;
+	margin: auto;
+	padding: 0px;
+	opacity: 0.2;
+}
+

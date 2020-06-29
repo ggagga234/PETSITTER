@@ -25,16 +25,20 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String home(Locale locale, Model model) {
-		return "home";
+		return "home2";
 	}
 	@RequestMapping("login")
 	public String login(String id) {
 		session.setAttribute("id", id);
 		Log_Count.log_count++;
 		System.out.println(Log_Count.log_count);
-		return "redirect:/";
+		return "redirect:/home2";
 	}
 
+	@RequestMapping("adminindex")
+	public String admin() {
+		return "/admin/index";
+	}
 	
 	@RequestMapping("community")
 	public String community() {
