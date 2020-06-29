@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import kh.pet.dto.MessageDTO;
-
+import kh.pet.filter.xssfilter;
 import kh.pet.service.MessageService;
 
 @Controller
@@ -29,6 +29,9 @@ public class MessageController {
 	@Autowired
 	private MessageService service;
 
+	@Autowired
+	private xssfilter xss;
+	
 	@RequestMapping("writepage")
 	public String messageWritepage() {
 		return "message/messageWrite";	
@@ -42,6 +45,7 @@ public class MessageController {
 	@RequestMapping("write")
 	public void messageWrite(MessageDTO dto,HttpServletResponse response) {
 		dto.setMsg_sender((String)session.getAttribute("id"));
+		dto.setMsg_title(xss.cleanXSS(dto.getMsg_title()));
 		int re = service.sendMessage(dto);
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out;
@@ -52,7 +56,7 @@ public class MessageController {
 				out.flush();
 			}
 			else {
-				out.println("<script>alert('받는 이를 확인해 주시길 바랍니다.'); history.go(-1);</script>");
+				out.println("<script>alert('메세지 전송에 실패했습니다.'); history.go(-1);</script>");
 				out.flush();
 			}
 			
