@@ -39,9 +39,10 @@ public class MessageService {
 	
 	@Transactional("txManager")
 	public MessageDTO recieveview(int seq) {
+		MessageDTO dto = dao.recieveView(seq);
 		dao.recieveSecendView(seq);
 		dao.sendfirstView(seq);
-		return dao.recieveView(seq);
+		return dto;
 	}
 	
 	public int deletesendMessage(int seq) {
@@ -99,13 +100,13 @@ public class MessageService {
 		}
 
 		if(needPrev) {
-			sb.append("<a href=\"/message/sendlist?cpage="+(startNavi-1)+"\">< </a>");
+			sb.append("<a href=\"/message/sendlist?cpage="+(startNavi-1)+"\"class=\"badge badge-pill badge-info\"><</a>");
 		}
 		for(int i = startNavi; i<=endNavi; i++) {
-			sb.append("<a href=\"/message/sendlist?cpage="+i+"\">"+i+"</a>  ");	
+			sb.append("<a href=\"/message/sendlist?cpage="+i+"\"class=\"badge badge-pill badge-info\">"+i+"</a>");	
 		}
 		if(needNext) {
-			sb.append("<a href=\"/message/sendlist?cpage="+(endNavi+1)+"\"> ></a>");
+			sb.append("<a href=\"/message/sendlist?cpage="+(endNavi+1)+"\"class=\"badge badge-pill badge-info\">></a>");
 		}
 		return sb.toString();
 	}
@@ -116,11 +117,12 @@ public class MessageService {
 		int start = cpage*Message_Configuration.RECORD_COUNT_PER_PAGE - (Message_Configuration.RECORD_COUNT_PER_PAGE-1);
 		int end = start + (Message_Configuration.RECORD_COUNT_PER_PAGE-1);
 		Map<String, Object> tmp = new HashMap<String, Object>();
-		dao.recievefirstView(id);
 		tmp.put("start",start);
 		tmp.put("end", end);
 		tmp.put("id",id);
-		return dao.recieveMessagelist(tmp);
+		List<MessageDTO> list = dao.recieveMessagelist(tmp);
+		dao.recievefirstView(id);
+		return list;
 	}	
 	
 	public String recievePageNavi(int currentPage, String id){
@@ -160,13 +162,13 @@ public class MessageService {
 		}
 
 		if(needPrev) {
-			sb.append("<a href=\"/message/recievelist?cpage="+(startNavi-1)+"\">< </a>");
+			sb.append("<a href=\"/message/recievelist?cpage="+(startNavi-1)+"\"class=\"badge badge-pill badge-info\"><</a>");
 		}
 		for(int i = startNavi; i<=endNavi; i++) {
-			sb.append("<a href=\"/message/recievelist?cpage="+i+"\">"+i+"</a>  ");	
+			sb.append("<a href=\"/message/recievelist?cpage="+i+"\" class=\"badge badge-pill badge-info\">"+i+"</a>  ");	
 		}
 		if(needNext) {
-			sb.append("<a href=\"/message/recievelist?cpage="+(endNavi+1)+"\"> ></a>");
+			sb.append("<a href=\"/message/recievelist?cpage="+(endNavi+1)+"\"class=\"badge badge-pill badge-info\">></a>");
 		}
 		return sb.toString();
 	}

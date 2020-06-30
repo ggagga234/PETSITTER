@@ -87,11 +87,11 @@
 				<hr>
 				<div class="col-12 smenu chat">QnA 채팅 관리</div>
 				<hr>
-				<div class="col-12 smenu" id="hide">◀</div>
+				<div class="col-12 smenu hide" id="hide">◀</div>
 				<hr>
 			</div>
 		</div>
-		<div class="lside_hide d-none bg-primary" id="view">▶</div>
+		<div class="lside_hide d-none bg-primary hide" id="view">▶</div>
 		<div class="rside col">
 			<!--본문 용-->
 			<div class="row">

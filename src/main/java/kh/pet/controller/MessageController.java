@@ -1,7 +1,6 @@
 package kh.pet.controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +88,6 @@ public class MessageController {
 
 	@RequestMapping("recieveMessageView")
 	public String recieveMessageView(int seq) {
-		String id = (String)session.getAttribute("id");
 		MessageDTO dto = service.recieveview(seq);
 		session.setAttribute("viewmessage", dto);
 		return "message/recieveMessageView";

@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;           
+}
+hr{
+    border: 1px solid #CCCCCC;
+    width: 95%;
+    opacity: 0.4;
+    margin: 2px;;
+    height: 0px;
+}
+.top{
+    color: #81dad6;
+}
+.navi{
+    text-align: center; 
+    color: deepskyblue;
+}
+.log{
+    height: 55px;
+    text-align: right;
+}
+.title{
+    color: skyblue;
+}
+.stats{
+    font-size: 15px;
+    color: deepskyblue;
+    line-height: 30px;
+}
+ .verticalLine {
+    border-left: 1px solid #CCCCCC;
+    height: 100%;
+    margin: 0px;
+    opacity: 0.4;
+}
+
+.wrap{
+    margin: auto;
+    width: 95%;
+}
+.title2{
+    color: #81dad6;
+}
+
+.log2{
+    height: 70px;
+    text-align: center;
+}

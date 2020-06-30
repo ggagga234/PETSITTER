@@ -7,7 +7,7 @@
 }
 .bottom{
     height: 200px;
-    border: 1px black solid;
+    border: 1px #D6D6D6 solid;
 }
 .smenu{
     text-align: center;
@@ -31,16 +31,79 @@
 
 }
 .lside{
-    border: 1px black solid;
-    color: white;
+    border: 1px #D6D6D6 solid;
+    color: #CCCCCC;
 }
+
+.main:hover{
+    color : white;    
+    font-weight: bold;
+}
+
+.member:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.reservation:hover{
+    color : white;    
+    font-weight: bold;
+}
+
+.petsiter:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.black:hover{
+    color : white;    
+    font-weight: bold;
+}
+
+.baord:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.declaration:hover{
+    color : white;    
+    font-weight: bold;
+}
+
+.cash:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.pass:hover{
+    color : white;    
+    font-weight: bold;
+}
+
+.mess:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.chat:hover{
+    color : white;
+      font-weight: bold;
+}
+
+.hide:hover{
+    color : white;
+      font-weight: bold;
+}
+
 .lside_hide{
     border: 1px #16C6FC solid;
     width: 3%;
     line-height: 800px;
     text-align: center;
-    color: white
+    color: #CCCCCC;
 }
+
+
 .wrap{
     margin: 0px;
 }
