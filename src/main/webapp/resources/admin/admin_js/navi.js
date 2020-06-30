@@ -39,4 +39,48 @@ $(function(){
             $("#navmenu").css('display','none');
         }
     });
+    
+    $(".main").on("click",function(){
+    	location.href="/admin/main";
+    })
+    
+    $(".member").on("click",function(){
+    	location.href="/admin/member";
+    })
+    
+    $(".reservation").on("click",function(){
+    	location.href="/admin/reservation";
+    })
+    
+    $(".petsiter").on("click",function(){
+    	location.href="/admin/petsiter";
+    })
+    
+    $(".black").on("click",function(){
+    	location.href="/admin/black";
+    })
+    
+    $(".baord").on("click",function(){
+    	location.href="/admin/board";
+    })
+    
+    $(".declaration").on("click",function(){
+    	location.href="/admin/declaration";
+    })
+    
+    $(".cash").on("click",function(){
+    	location.href="/admin/cash";
+    })
+    
+    $(".pass").on("click",function(){
+    	location.href="/admin/pass";
+    })
+    
+    $(".mess").on("click",function(){
+    	location.href="/admin/mess";
+    })
+    
+    $(".chat").on("click",function(){
+    	location.href="/admin/chat";
+    })
 });

@@ -32,12 +32,12 @@ public class HomeController {
 		session.setAttribute("id", id);
 		Log_Count.log_count++;
 		System.out.println(Log_Count.log_count);
-		return "redirect:/home2";
+		return "home2";
 	}
 
 	@RequestMapping("adminindex")
 	public String admin() {
-		return "/admin/index";
+		return "admin/index";
 	}
 	
 	@RequestMapping("community")
