@@ -11,7 +11,7 @@
 <body>
 <c:choose>
 <c:when test="${id eq null}">
-<form action="login">
+<form action="login2">
 	<input type="text" name="id">
 	<button>로그인</button>
 </form>

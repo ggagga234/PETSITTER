@@ -32,7 +32,7 @@
        <div class="col-12">
             <div class="row">
               <div class="col-2 col-md-2 col-xl-1 title2">보낸이</div>
-              <div class="col-3 col-md-4 col-xl-5 verticalLine">${viewmessage.msg_reciever}</div>
+              <div class="col-3 col-md-4 col-xl-5 verticalLine">${viewmessage.msg_sender}</div>
               <div class="col-3 col-md-2 col-xl-1 title2">받은 일</div>
               <div class="col-4 col-md-4 col-xl-5 verticalLine ">${viewmessage.msg_date}</div>
               <hr>
@@ -51,7 +51,7 @@
     </div>
     <script>
 	$("#delete").on("click", function() {
-		location.href = "/message/recievedelete?seq=${viewmessage.msg_seq}";
+		location.href = "/message/recievedelete?seq=${viewmessage.msg_seq}&send=${viewmessage.msg_sender}";
 	})
     </script>
     

@@ -23,18 +23,24 @@ public class HomeController {
 	@Autowired
 	private HttpSession session;
 	
+	
 	@RequestMapping("/")
 	public String home(Locale locale, Model model) {
-		return "home2";
+		return "main";
 	}
-	@RequestMapping("login")
+	@RequestMapping("login2")
 	public String login(String id) {
 		session.setAttribute("id", id);
 		Log_Count.log_count++;
 		System.out.println(Log_Count.log_count);
 		return "home2";
 	}
-
+	
+	@RequestMapping("tmp")
+	public String tmp() {
+		return "home2";
+	}
+	
 	@RequestMapping("adminindex")
 	public String admin() {
 		return "admin/index";

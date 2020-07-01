@@ -45,11 +45,11 @@
 					보낸 메세지가 없습니다.
 				</c:when>
 				<c:otherwise>
-					<div class="row ">
+					<div class="row con">
 						<c:forEach var="i" items="${sendlist}">
 							<div class="col-12 col-md-4"><a href="/message/sendViewmessage?seq=${i.msg_seq}">${i.msg_title}</a></div>
 							<div class="col-5 col-md-2">${i.msg_date}</div>
-							<div class="col-3 col-md-2">${i.msg_reciever}</div>
+							<div class="col-3 col-md-2 recieve">${i.msg_reciever}</div>
 							<div class="col-2 col-md-2 stats">${i.msg_status}</div>
 							<div class="col-2 col-md-2">
 								<button id="${i.msg_seq}" class="btn btn-outline-primary btn-sm sedelete">삭제</button>

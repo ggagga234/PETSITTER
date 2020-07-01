@@ -44,15 +44,15 @@
 					받은 메세지가 없습니다.
 			</c:when>
 				<c:otherwise>
-					<div class="row ">
+					<div class="row con">
 						<c:forEach var="i" items="${recievelist}">
 							<div class="col-12 col-md-4">
 								<a href="/message/recieveMessageView?seq=${i.msg_seq}">${i.msg_title}</a>
 							</div>
 							<div class="col-5 col-md-2">${i.msg_date}</div>
-							<div class="col-3 col-md-2">${i.msg_sender}</div>
+							<div class="col-3 col-md-2 send">${i.msg_sender}</div>
 							<c:choose>
-								<c:when test="${i.msg_status eq 'New'}">
+								<c:when test="${i.msg_status eq 'NEW'}">
 									<div class="col-2 col-md-2"><h5><span class="badge badge-info">new</span></h5></div>
 								</c:when>
 								<c:otherwise>
@@ -81,8 +81,5 @@
             </div>
         </div>
         </div>
-	<script>
-		
-	</script>
 </body>
 </html>

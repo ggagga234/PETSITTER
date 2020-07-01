@@ -42,7 +42,9 @@
 			<div class="col-3 col-sm-2 col-lg-1 title">받는 이</div>
 			<div class="col-9 col-sm-10 col-lg-11 verticalLine">
 				<input type="text" name="msg_reciever" style="width: 98%;" id="msg_reciever">
+				<div id="check" style="display: none"></div>
 			</div>
+				
 			<hr>
 			<div class="col-12">
 				<textarea id="summernote" name="msg_contents" class="msg_contents">

@@ -31,7 +31,6 @@ public class MessageDAO {
 		return mybatis.selectList("Messages.recievemassagelist", map);
 	}
 	
-	
 	public int sendMessage(MessageDTO dto) {
 		return mybatis.insert("Messages.send",dto);
 	}
@@ -40,8 +39,8 @@ public class MessageDAO {
 		return mybatis.insert("Messages.recieve",dto);
 	}
 	
-	public int searchMem(MessageDTO dto) {
-		return mybatis.selectOne("Messages.search",dto.getMsg_reciever());
+	public int searchMem(String reciver) {
+		return mybatis.selectOne("Messages.search",reciver);
 	}
 	
 	public MessageDTO sendView(int seq) {
@@ -64,11 +63,11 @@ public class MessageDAO {
 		mybatis.update("Messages.sendfirstView",seq);
 	}
 	
-	public int senddelete(int seq) {
-		return mybatis.delete("Messages.senddelete",seq);
+	public int senddelete(Map<String, Object> map) {
+		return mybatis.delete("Messages.senddelete",map);
 	}
 	
-	public int recievedelete(int seq) {
-		return mybatis.delete("Messages.recievedelete",seq);
+	public int recievedelete(Map<String, Object> map) {
+		return mybatis.delete("Messages.recievedelete", map);
 	}
 }

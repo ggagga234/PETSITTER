@@ -71,10 +71,10 @@
 
 							<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
 								<li class="active"><a href="#"><span>Home</span></a></li>
-								<li class="active"><a href="#"><span>AboutUs</span></a>
+								<li class="active"><a href="tmp"><span>메세지</span></a>
 								</li>
-								<li><a href="#"><span>PetService</span></a></li>
-								<li><a href="#"><span>About</span></a></li>
+								<li><a href="adminindex"><span>관리자</span></a></li>
+								<li><a href="mb/mb_board"><span>반려인 게시판</span></a></li>
 								<li><a href="mypage"><span>MyPage</span></a></li>
 								<li><a href="#"><span>Sing Up</span></a></li>
 								<li><a href="#"><span>Login</span></a></li>

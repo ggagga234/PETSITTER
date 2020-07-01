@@ -51,7 +51,7 @@
     </div>
     <script> 
 		$("#sedelete").on("click", function() {
-			location.href = "/message/senddelete?seq=${viewmessage.msg_seq}";
+			location.href = "/message/senddelete?seq=${viewmessage.msg_seq}&recieve=${viewmessage.msg_reciever}";
 		})
     </script>
 </body>

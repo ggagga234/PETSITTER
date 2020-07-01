@@ -46,6 +46,7 @@
 				<input type="text" name="msg_reciever"
 					value="${viewmessage.msg_reciever}" style="width: 98%;"
 					id="msg_reciever">
+					<div id="check" style="display: none"></div>		
 			</div>
 			<hr>
 			<div class="col-12">
@@ -60,6 +61,5 @@
 			</div>
 		</div>
 	</form>
-
 </body>
 </html>

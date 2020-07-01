@@ -18,18 +18,15 @@ public class MessageService {
 	@Autowired
 	private MessageDAO dao;
 	
+	public int searchMen(String reciver) {
+		return dao.searchMem(reciver);
+	}
+	
 	@Transactional("txManager")
 	public int sendMessage(MessageDTO dto) {
-		int re = dao.searchMem(dto);
-		if(re ==1) {
-			dao.sendMessage(dto);
-			dao.recieveMessage(dto);
-			return 1;
-		}
-		else {
-			System.out.println(re);
-			return 0;
-		}
+		int re = dao.sendMessage(dto);
+		dao.recieveMessage(dto);
+		return re;
 	}
 	
 	public MessageDTO sendview(int seq) {
@@ -45,12 +42,20 @@ public class MessageService {
 		return dto;
 	}
 	
-	public int deletesendMessage(int seq) {
-		return dao.senddelete(seq);
+	public int deletesendMessage(int seq,String send, String reciever) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("seq", seq);
+		map.put("send", send);
+		map.put("reciever",reciever);
+		return dao.senddelete(map);
 	}
 	
-	public int deleterecieveMessage(int seq) {
-		return dao.recievedelete(seq);
+	public int deleterecieveMessage(int seq,String send, String reciever) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("seq", seq);
+		map.put("send", send);
+		map.put("reciever",reciever);
+		return dao.recievedelete(map);
 	}
 	
 	public List<MessageDTO> sendmessagelist(int cpage,String id){

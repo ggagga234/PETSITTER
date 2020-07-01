@@ -56,6 +56,6 @@
     </filter>
     <filter-mapping>
         <filter-name>xssEscapeServletFilter</filter-name>
-        <url-pattern>/login</url-pattern>
+        <url-pattern>/login2</url-pattern>
     </filter-mapping>
 </web-app>

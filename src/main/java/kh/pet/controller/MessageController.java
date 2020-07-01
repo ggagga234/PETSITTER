@@ -1,6 +1,7 @@
 package kh.pet.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,17 @@ public class MessageController {
 	@RequestMapping("rewritepage")
 	public String messagerewirte() {
 		return "message/messagerewirte";
+	}
+	
+	@RequestMapping("checkreciver")
+	public void checkreciver(String reciever,HttpServletResponse response) {
+		int re = service.searchMen(reciever);
+		JSONObject jobj = new JSONObject();
+		jobj.put("re", re) ;
+		try {
+			response.getWriter().append(jobj.toString());
+		} catch (IOException e) {
+		}
 	}
 	
 	@RequestMapping("write")
@@ -109,8 +121,9 @@ public class MessageController {
 	}
 
 	@RequestMapping("senddelete")
-	public void senddelete(int seq,HttpServletResponse response) {
-		int re = service.deletesendMessage(seq);
+	public void senddelete(int seq,String recieve,HttpServletResponse response) {
+		String send = (String)session.getAttribute("id");
+		int re = service.deletesendMessage(seq,send,recieve);
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out;
 		try {
@@ -119,6 +132,7 @@ public class MessageController {
 				out.println("<script>alert('성공적으로 삭제했습니다.');location.href = '/message/sendlist'</script>");
 			}
 			else {
+				out.println("<script>alert('이상한 경로로 삭제할려고 들지마라');location.href = '/message/recievelist'</script>");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -126,8 +140,9 @@ public class MessageController {
 	}
 
 	@RequestMapping("recievedelete")
-	public void recievedelete(int seq,HttpServletResponse response){
-		int re = service.deleterecieveMessage(seq);
+	public void recievedelete(int seq,String send,HttpServletResponse response){
+		String reciever = (String)session.getAttribute("id");
+		int re = service.deleterecieveMessage(seq,send,reciever);
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out;
 		try {
@@ -136,6 +151,7 @@ public class MessageController {
 				out.println("<script>alert('성공적으로 삭제했습니다.');location.href = '/message/recievelist'</script>");
 			}
 			else {
+				out.println("<script>alert('이상한 경로로 삭제할려고 들지마라');location.href = '/message/recievelist'</script>");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
