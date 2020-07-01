@@ -17,5 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	
-	
+	private void sysout() {
+		// TODO Auto-generated method stub
+
+	}
 }
