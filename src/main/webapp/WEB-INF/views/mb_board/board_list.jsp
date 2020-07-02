@@ -117,15 +117,17 @@
                     <div class="col-lg-8">
 						
 						<c:forEach var="i" items="${mblist}">
+							<c:if test="${i.mb_restatus eq 'no'}">
 							<div class="d-block d-md-flex listing-horizontal">
-								<a href="#" class="img d-block" style="background-image: url('/upload/${i.photo[0]}')">
+								<a href="/mb/redlist?mb_seq=${i.mb_seq}" class="img d-block" style="background-image: url('/upload/${i.photo[0]}')">			
 								</a>
 								<div class="lh-content">
 									<h3>
-										<a href="/mb/redlist">${i.mb_title}</a>
+										<a href="/mb/redlist?mb_seq=${i.mb_seq}">${i.mb_title}</a>
 									</h3>
 								</div>
 							</div>
+							</c:if>
 						</c:forEach>
 
 						<div class="col-12 mt-5 text-center">

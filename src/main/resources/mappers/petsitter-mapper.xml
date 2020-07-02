@@ -7,12 +7,12 @@
 </select>
 
 <insert id="memboardinsert">
-	insert into mem_board values(mb_seq.nextval,#{mb_title,jdbcType=VARCHAR},#{mb_writer,jdbcType=VARCHAR},#{mb_unique},sysdate,#{mb_pet_name},#{mb_service},#{mb_startday},#{mb_endday},#{mb_time},#{mb_point,jdbcType=VARCHAR},#{mb_petphoto,jdbcType=VARCHAR})
+	insert into mem_board values(mb_seq.nextval,#{mb_title,jdbcType=VARCHAR},#{mb_writer,jdbcType=VARCHAR},#{mb_unique},sysdate,#{mb_pet_name},#{mb_service},#{mb_startday},#{mb_endday},#{mb_time},#{mb_point,jdbcType=VARCHAR},#{mb_petphoto,jdbcType=VARCHAR},default,default)
 </insert>
 
 <!-- mb_seq -> 아이디값으로 수정 -->
 <select id="redlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=3
+	select * from mem_board where mb_seq=#{mb_seq}
 </select>
 
 <select id="petphoto" resultType="String">
@@ -24,7 +24,7 @@
 </select>
 
 <select id="getpettype" resultType="String">
-	select pet_type from mypet where pet_name = #{petname,jdbcType=VARCHAR}
+	select pet_type from mypet where pet_name=#{value}
 </select>
 
 <select id="modlist" resultType="kh.pet.dto.MemboardDto">
@@ -41,5 +41,13 @@
 
 <select id="mb_boardList" resultType="kh.pet.dto.MemboardDto">
 	select * from (select mem_board.*,row_number()over (order by mb_seq desc) rnum from mem_board) where rnum between ${start} and ${end}
+</select>
+
+<delete id="deleteboard">
+	delete mem_board where mb_seq=#{value}
+</delete>
+
+<select id="seqid" resultType="int">
+	select max(mb_seq) from mem_board where mb_writer=#{value}
 </select>
 </mapper>

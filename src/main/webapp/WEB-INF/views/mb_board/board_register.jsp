@@ -170,7 +170,7 @@
 
 		<div class="site-section bg-light">
 			<div class="container">
-				<form action="index" method="post">
+				<form action="/mb/index" method="post">
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="d-block d-md-flex listing-horizontal">

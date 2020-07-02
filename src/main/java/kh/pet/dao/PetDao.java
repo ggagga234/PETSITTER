@@ -23,8 +23,8 @@ public class PetDao {
 		return mybatis.insert("petsitter.memboardinsert", mdto);
 	}
 	
-	public MemboardDto redlist(){
-		return mybatis.selectOne("petsitter.redlist");
+	public MemboardDto redlist(int mb_seq){
+		return mybatis.selectOne("petsitter.redlist",mb_seq);
 	}
 	
 	public String petphoto(String mb_pet_name) {
@@ -36,25 +36,31 @@ public class PetDao {
 	}
 	
 	public String getpettype(String petname) {
-		return mybatis.selectOne("getpettype",petname);
+		return mybatis.selectOne("petsitter.getpettype",petname);
 	}
 	
 	public MemboardDto modlist(String mb_seq) {
-		return mybatis.selectOne("modlist", mb_seq);
+		return mybatis.selectOne("petsitter.modlist", mb_seq);
 	}
 	
 	public int Memboardupdate(MemboardDto mdto) {
-		return mybatis.update("Memboardupdate", mdto);
+		return mybatis.update("petsitter.Memboardupdate", mdto);
 	}
 	
 	
 	public List<MemboardDto> mb_boardList(Map<String,Integer> con){
-		return mybatis.selectList("mb_boardList",con);
+		return mybatis.selectList("petsitter.mb_boardList",con);
 	}
 	
 	public int getArticleCount() {
-		return mybatis.selectOne("getArticleCount");
+		return mybatis.selectOne("petsitter.getArticleCount");
 	}
 	
+	public int deleteboard(MemboardDto mdto) {
+		return mybatis.delete("petsitter.deleteboard", mdto);
+	}
 	
+	public int seqid(String id) {
+		return mybatis.selectOne("petsitter.seqid",id);
+	}
 }
