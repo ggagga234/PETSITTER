@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 
-////////////////////////////////////////////////////////////////
-
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,20 +16,20 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 <link rel="shortcut icon" href="ftco-32x32.png">
 <link href="https://fonts.googleapis.com/css?family=Rubik:400,700"
 	rel="stylesheet">
-<link rel="stylesheet" href="/resources/mb/fonts/icomoon/style.css">
-<link rel="stylesheet" href="/resources/mb/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/mb/css/magnific-popup.css">
-<link rel="stylesheet" href="/resources/mb/css/jquery-ui.css">
-<link rel="stylesheet" href="/resources/mb/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/resources/mb/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/resources/mb/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/resources/main/fonts/icomoon/style.css">
+<link rel="stylesheet" href="/resources/main/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/main/css/magnific-popup.css">
+<link rel="stylesheet" href="/resources/main/css/jquery-ui.css">
+<link rel="stylesheet" href="/resources/main/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/resources/main/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/resources/main/css/bootstrap-datepicker.css">
 <link rel="stylesheet"
-	href="/resources/mb/fonts/flaticon/font/flaticon.css">
-<link rel="stylesheet" href="/resources/mb/css/aos.css">
-<link rel="stylesheet" href="/resources/mb/css/rangeslider.css">
+	href="/resources/main/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="/resources/main/css/aos.css">
+<link rel="stylesheet" href="/resources/main/css/rangeslider.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/resources/mb/dist/tavo-calendar.css">
-<link rel="stylesheet" href="/resources/mb/css/style.css">
+<link rel="stylesheet" href="/resources/main/css/style.css">
 <link rel="stylesheet" href="/resources/mb/css/checkbox.css">
 <link rel="stylesheet" href="/resources/mb/css/calendar.css">
 
@@ -95,6 +79,9 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 	border-radius: 5px;
 	margin: 10px 10px;
 }
+#uniqueness{border: 1px solid #81DAD6; height:200px;}
+#title{border: 1px solid #81DAD6;}
+.services{display: inline-block;}	
 </style>
 </head>
 
@@ -484,18 +471,18 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 			</div>
 		</div>
 	</footer>
-	<script src="/resources/mb/js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="/resources/mb/js/jquery-ui.js"></script>
-	<script src="/resources/mb/js/popper.min.js"></script>
-	<script src="/resources/mb/js/bootstrap.min.js"></script>
-	<script src="/resources/mb/js/owl.carousel.min.js"></script>
-	<script src="/resources/mb/js/jquery.stellar.min.js"></script>
-	<script src="/resources/mb/js/jquery.countdown.min.js"></script>
-	<script src="/resources/mb/js/jquery.magnific-popup.min.js"></script>
-	<script src="/resources/mb/js/bootstrap-datepicker.min.js"></script>
-	<script src="/resources/mb/js/aos.js"></script>
-	<script src="/resources/mb/js/rangeslider.min.js"></script>
-	<script src="/resources/mb/js/main.js"></script>
+	<script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/resources/main/js/jquery-ui.js"></script>
+	<script src="/resources/main/js/popper.min.js"></script>
+	<script src="/resources/main/js/bootstrap.min.js"></script>
+	<script src="/resources/main/js/owl.carousel.min.js"></script>
+	<script src="/resources/main/js/jquery.stellar.min.js"></script>
+	<script src="/resources/main/js/jquery.countdown.min.js"></script>
+	<script src="/resources/main/js/jquery.magnific-popup.min.js"></script>
+	<script src="/resources/main/js/bootstrap-datepicker.min.js"></script>
+	<script src="/resources/main/js/aos.js"></script>
+	<script src="/resources/main/js/rangeslider.min.js"></script>
+	<script src="/resources/main/js/main.js"></script>
 	<script src="/resources/mb/js/checkbox.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=673fb72de94724a273da597b59cd588d&libraries=services"></script>

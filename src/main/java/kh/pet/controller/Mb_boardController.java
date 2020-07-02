@@ -33,10 +33,10 @@ public class Mb_boardController {
 	//	예약등록 - 1
 	@RequestMapping("index")
 	public String index(MemboardDto mdto) {
-		mdto.setMb_pet_name("aaaaa");
 		String id = "a";
 		mdto.setMb_writer(id);
-		service.Memboardinsert(mdto);		
+		service.Memboardinsert(mdto);
+		
 		return "redirect:redlist";
 	}
 	// 등록뷰 보드seq값추가해줘야함	
@@ -44,7 +44,8 @@ public class Mb_boardController {
 	public String redlist(Model m,MemboardDto mdto) {
 		String add = "천호대로 79길 31";
 		String id = "a";
-		MemboardDto mlist = service.redlist(mdto);
+		int mb_seq = service.seqid(id);
+		MemboardDto mlist = service.redlist(mb_seq);
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");
@@ -58,15 +59,19 @@ public class Mb_boardController {
 			timetype.add(time);
 		}
 		for(String petname : petnamearr) {
+			System.out.println(petname);
 			pettype.add(service.getpettype(petname));
 		}
 		for(String petname : petnamearr) {
+			
 			petphoto.add(service.petphoto(petname));
 		}
 		for(String service : servicearr) {
 			services.add(service);
 		}
-
+		
+		System.out.println(pettype);
+		
 		m.addAttribute("times", times);
 		m.addAttribute("mlist", mlist);
 		m.addAttribute("add", add);
@@ -145,15 +150,14 @@ public class Mb_boardController {
 				mb.setPhoto(photoarr);
 			}
 		}
-		
-	    
-	    
+  
 		System.out.println("현재페이지 : "+cpage);
 		String navi = service.getPageNavi(cpage);
 		m.addAttribute("navi", navi);
 		m.addAttribute("mblist", mblist);
 		return "mb_board/board_list";
 	}
+	
 	@RequestMapping("deleteboard")
 	public String deleteboard(MemboardDto mdto) {
 		service.deleteboard(mdto);

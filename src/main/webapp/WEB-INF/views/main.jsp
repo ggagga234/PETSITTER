@@ -579,7 +579,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the
@@ -596,7 +596,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the
@@ -613,7 +613,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the

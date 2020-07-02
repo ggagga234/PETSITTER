@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- 
-////////////////////////////////////////////////////////////////
-
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,24 +17,25 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="/resources/mb/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/resources/main/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/mb/css/magnific-popup.css">
-    <link rel="stylesheet" href="/resources/mb/css/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/mb/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/resources/mb/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/resources/main/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/main/css/magnific-popup.css">
+    <link rel="stylesheet" href="/resources/main/css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/main/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/resources/main/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/resources/main/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="/resources/mb/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/resources/main/fonts/flaticon/font/flaticon.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/aos.css">
-    <link rel="stylesheet" href="/resources/mb/css/rangeslider.css">
+    <link rel="stylesheet" href="/resources/main/css/aos.css">
+    <link rel="stylesheet" href="/resources/main/css/rangeslider.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/style.css">
+    <link rel="stylesheet" href="/resources/main/css/style.css">
 
 </head>
+
 
 <body>
 
@@ -109,21 +94,17 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
 
 
-        <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(/resources/images/man.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(/resources/mb/images/man.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
 
                     <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
-
-
                         <div class="row justify-content-center">
                             <div class="col-md-8 text-center">
                                 <h1>Listings</h1>
                                 <p data-aos="fade-up" data-aos-delay="100">Handcrafted free templates by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -136,10 +117,9 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                     <div class="col-lg-8">
 						
 						<c:forEach var="i" items="${mblist}">
+							<c:if test="${i.mb_restatus eq 'no'}">
 							<div class="d-block d-md-flex listing-horizontal">
-
-								<a href="/mb/redlist?mb_seq=${i.mb_seq}" class="img d-block"
-									style="background-image: url('/upload/${i.photo[0]}')">
+								<a href="/mb/redlist?mb_seq=${i.mb_seq}" class="img d-block" style="background-image: url('/upload/${i.photo[0]}')">			
 								</a>
 								<div class="lh-content">
 									<h3>
@@ -147,6 +127,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 									</h3>
 								</div>
 							</div>
+							</c:if>
 						</c:forEach>
 
 						<div class="col-12 mt-5 text-center">
@@ -216,7 +197,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         </div>
     </div>
 
-    <div class="site-section">
+   <div class="site-section">
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center border-primary">
@@ -258,7 +239,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             </div>
         </div>
     </div>
-
+</div>
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -322,21 +303,22 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                 </div>
             </div>
         </div>
+       
     </footer>
-    <script src="/resources/mb/js/jquery-3.3.1.min.js"></script>
-    <script src="/resources/mb/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="/resources/mb/js/jquery-ui.js"></script>
-    <script src="/resources/mb/js/popper.min.js"></script>
-    <script src="/resources/mb/js/bootstrap.min.js"></script>
-    <script src="/resources/mb/js/owl.carousel.min.js"></script>
-    <script src="/resources/mb/js/jquery.stellar.min.js"></script>
-    <script src="/resources/mb/js/jquery.countdown.min.js"></script>
-    <script src="/resources/mb/js/jquery.magnific-popup.min.js"></script>
-    <script src="/resources/mb/js/bootstrap-datepicker.min.js"></script>
-    <script src="/resources/mb/js/aos.js"></script>
-    <script src="/resources/mb/js/rangeslider.min.js"></script>
+    <script src="/resources/main/js/jquery-3.3.1.min.js"></script>
+    <script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/resources/main/js/jquery-ui.js"></script>
+    <script src="/resources/main/js/popper.min.js"></script>
+    <script src="/resources/main/js/bootstrap.min.js"></script>
+    <script src="/resources/main/js/owl.carousel.min.js"></script>
+    <script src="/resources/main/js/jquery.stellar.min.js"></script>
+    <script src="/resources/main/js/jquery.countdown.min.js"></script>
+    <script src="/resources/main/js/jquery.magnific-popup.min.js"></script>
+    <script src="/resources/main/js/bootstrap-datepicker.min.js"></script>
+    <script src="/resources/main/js/aos.js"></script>
+    <script src="/resources/main/js/rangeslider.min.js"></script>
 
-    <script src="/resources/mb/js/main.js"></script>
+    <script src="/resources/main/js/main.js"></script>
 
 </body>
 

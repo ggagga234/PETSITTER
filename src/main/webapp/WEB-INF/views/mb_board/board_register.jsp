@@ -32,20 +32,20 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 <link rel="shortcut icon" href="ftco-32x32.png">
 <link href="https://fonts.googleapis.com/css?family=Rubik:400,700"
 	rel="stylesheet">
-<link rel="stylesheet" href="/resources/mb/fonts/icomoon/style.css">
-<link rel="stylesheet" href="/resources/mb/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/mb/css/magnific-popup.css">
-<link rel="stylesheet" href="/resources/mb/css/jquery-ui.css">
-<link rel="stylesheet" href="/resources/mb/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/resources/mb/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/resources/mb/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/resources/main/fonts/icomoon/style.css">
+<link rel="stylesheet" href="/resources/main/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/main/css/magnific-popup.css">
+<link rel="stylesheet" href="/resources/main/css/jquery-ui.css">
+<link rel="stylesheet" href="/resources/main/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/resources/main/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/resources/main/css/bootstrap-datepicker.css">
 <link rel="stylesheet"
-	href="/resources/mb/fonts/flaticon/font/flaticon.css">
-<link rel="stylesheet" href="/resources/mb/css/aos.css">
-<link rel="stylesheet" href="/resources/mb/css/rangeslider.css">
+	href="/resources/main/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="/resources/main/css/aos.css">
+<link rel="stylesheet" href="/resources/main/css/rangeslider.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/resources/mb/dist/tavo-calendar.css">
-<link rel="stylesheet" href="/resources/mb/css/style.css">
+<link rel="stylesheet" href="/resources/main/css/style.css">
 <link rel="stylesheet" href="/resources/mb/css/checkbox.css">
 <link rel="stylesheet" href="/resources/mb/css/calendar.css">
 
@@ -185,7 +185,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
 		<div class="site-section bg-light">
 			<div class="container">
-				<form action="index" method="post">
+				<form action="/mb/index" method="post">
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="d-block d-md-flex listing-horizontal">
@@ -303,47 +303,47 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 										<div id="timelist">
 											<div>
 												<input type="checkbox" class="selectime" value="first"
-													name="mb_time" id="first"><label for="first"><span></span>&nbsp;&nbsp;1부
+													name="mb_time" id="first"><label for="first"><span></span>1부
 													09:00 ~ 11:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="second"
-													name="mb_time" id="second"><label for="second"><span></span>&nbsp;&nbsp;2부
+													name="mb_time" id="second"><label for="second"><span></span>2부
 													11:00 ~ 13:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="third"
-													name="mb_time" id="third"><label for="third"><span></span>&nbsp;&nbsp;3부
+													name="mb_time" id="third"><label for="third"><span></span>3부
 													13:00 ~ 15:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="fourth"
-													name="mb_time" id="fourth"><label for="fourth"><span></span>&nbsp;&nbsp;4부
+													name="mb_time" id="fourth"><label for="fourth"><span></span>4부
 													15:00 ~ 17:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="fifth"
-													name="mb_time" id="fifth"><label for="fifth"><span></span>&nbsp;&nbsp;5부
+													name="mb_time" id="fifth"><label for="fifth"><span></span>5부
 													17:00 ~ 19:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="sixth"
-													name="mb_time" id="sixth"><label for="sixth"><span></span>&nbsp;&nbsp;6부
+													name="mb_time" id="sixth"><label for="sixth"><span></span>6부
 													19:00 ~ 21:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="am"
-													name="mb_time" id="am"><label for="am"><span></span>&nbsp;&nbsp;오전
+													name="mb_time" id="am"><label for="am"><span></span>오전
 													09:00 ~ 14:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="pm"
-													name="mb_time" id="pm"><label for="pm"><span></span>&nbsp;&nbsp;오후
+													name="mb_time" id="pm"><label for="pm"><span></span>오후
 													14:00 ~ 21:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="full"
-													name="mb_time" id="full"><label for="full"><span></span>&nbsp;&nbsp;풀타임
+													name="mb_time" id="full"><label for="full"><span></span>풀타임
 													09:00 ~ 20:00</label>
 											</div>
 										</div>
@@ -475,19 +475,19 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 			</div>
 		</div>
 	</footer>
-	<script src="/resources/mb/js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="/resources/mb/js/jquery-ui.js"></script>
-	<script src="/resources/mb/js/popper.min.js"></script>
-	<script src="/resources/mb/js/bootstrap.min.js"></script>
-	<script src="/resources/mb/js/owl.carousel.min.js"></script>
-	<script src="/resources/mb/js/jquery.stellar.min.js"></script>
-	<script src="/resources/mb/js/jquery.countdown.min.js"></script>
-	<script src="/resources/mb/js/jquery.magnific-popup.min.js"></script>
-	<script src="/resources/mb/js/bootstrap-datepicker.min.js"></script>
-	<script src="/resources/mb/js/aos.js"></script>
-	<script src="/resources/mb/js/rangeslider.min.js"></script>
+	<script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/resources/main/js/jquery-ui.js"></script>
+	<script src="/resources/main/js/popper.min.js"></script>
+	<script src="/resources/main/js/bootstrap.min.js"></script>
+	<script src="/resources/main/js/owl.carousel.min.js"></script>
+	<script src="/resources/main/js/jquery.stellar.min.js"></script>
+	<script src="/resources/main/js/jquery.countdown.min.js"></script>
+	<script src="/resources/main/js/jquery.magnific-popup.min.js"></script>
+	<script src="/resources/main/js/bootstrap-datepicker.min.js"></script>
+	<script src="/resources/main/js/aos.js"></script>
+	<script src="/resources/main/js/rangeslider.min.js"></script>
 	<script src="/resources/mb/js/calendar.js"></script>
-	<script src="/resources/mb/js/main.js"></script>
+	<script src="/resources/main/js/main.js"></script>
 	<script src="/resources/mb/js/checkbox.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=673fb72de94724a273da597b59cd588d&libraries=services"></script>

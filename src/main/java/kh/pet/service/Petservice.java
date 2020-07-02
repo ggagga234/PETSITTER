@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kh.pet.config.Mb_Configuration;
+import kh.pet.staticInfo.Mb_Configuration;
 import kh.pet.dao.PetDao;
 import kh.pet.dto.MemboardDto;
 import kh.pet.dto.PetDto;
@@ -16,7 +16,6 @@ import kh.pet.dto.PetDto;
 public class Petservice {
 	@Autowired
 	private PetDao dao;
-	private Mb_Configuration Configuration;
 	
 	public List<PetDto> Petselect(){
 		return dao.Petselect();
@@ -26,8 +25,8 @@ public class Petservice {
 		return dao.Memboardinsert(mdto);
 	}
 	
-	public MemboardDto redlist(MemboardDto mdto){
-		return dao.redlist(mdto);
+	public MemboardDto redlist(int mb_seq){
+		return dao.redlist(mb_seq);
 	}
 	
 	public String petphoto(String  mb_pet_name) {
@@ -39,6 +38,7 @@ public class Petservice {
 	}
 	
 	public String getpettype(String petname) {
+		System.out.println(dao.getpettype(petname));
 		return dao.getpettype(petname);
 	}
 	
@@ -54,9 +54,13 @@ public class Petservice {
 		return dao.deleteboard(mdto);
 	}
 	
+	public int seqid(String id) {
+		return dao.seqid(id);
+	}
+	
 	public List<MemboardDto> mb_boardList(int cpage){
-		int start =  cpage*Configuration.recordCountPerPage-(Configuration.recordCountPerPage-1);
-		int end = start + (Configuration.recordCountPerPage-1);
+		int start =  cpage*Mb_Configuration.recordCountPerPage-(Mb_Configuration.recordCountPerPage-1);
+		int end = start + (Mb_Configuration.recordCountPerPage-1);
 		
 		Map<String,Integer> con = new HashMap<String,Integer>();
 		con.put("start",start);
@@ -75,11 +79,11 @@ public class Petservice {
 		
 		int pageTotalCount = 0; // 전체 페이지 개수
 		
-		if(recordTotalCount % Configuration.recordCountPerPage > 0) {
-			pageTotalCount = recordTotalCount / Configuration.recordCountPerPage + 1;
+		if(recordTotalCount % Mb_Configuration.recordCountPerPage > 0) {
+			pageTotalCount = recordTotalCount / Mb_Configuration.recordCountPerPage + 1;
 			//나머지가있으면 페이지 게시글이 넘처 나머지값이 있으면 +1을 해줘 페이지를 추가해준다. 
 		}else {
-			pageTotalCount = recordTotalCount / Configuration.recordCountPerPage;//나머지값이 없으면 더할 필요가없다
+			pageTotalCount = recordTotalCount / Mb_Configuration.recordCountPerPage;//나머지값이 없으면 더할 필요가없다
 		}
 		
 	
@@ -90,9 +94,9 @@ public class Petservice {
 			currentPage = pageTotalCount;
 		}//공격자가 currentPage 을 변조할 경우에 대한 보안 코드
 		
-		int startNavi = (currentPage - 1) / Configuration.naviCountPerPage * Configuration.naviCountPerPage + 1;
+		int startNavi = (currentPage - 1) / Mb_Configuration.naviCountPerPage * Mb_Configuration.naviCountPerPage + 1;
 		//어느페이지를 갈때 해당 페이지 값의 맞는 네비가 범위가 출력  1,11,21,31
-		int endNavi = startNavi + (Configuration.naviCountPerPage -1);
+		int endNavi = startNavi + (Mb_Configuration.naviCountPerPage -1);
 
 		if(endNavi>pageTotalCount) {
 			endNavi = pageTotalCount;

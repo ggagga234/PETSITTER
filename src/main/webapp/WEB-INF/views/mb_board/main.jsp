@@ -1,20 +1,4 @@
 
-<!-- 
-////////////////////////////////////////////////////////////////
-
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
@@ -64,7 +48,9 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     </div>
     
     <header class="site-navbar" role="banner">
-
+    
+    </header>
+      
       <div class="container">
         <div class="row align-items-center">
           
@@ -91,9 +77,8 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
         </div>
       </div>
-      
-    </header>
 
+    
   
 
     <div class="site-blocks-cover overlay" style="background-image: url(resources/images/home.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -342,7 +327,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               <img src="resources/images/img_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
               <div class="h-entry-inner">
                 <h2 class="font-size-regular"><a href="#">Etiquette tips for travellers</a></h2>
-                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span> May 5th, 2019</div>
+                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span> May 5th, 2019</div>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
               </div>
             </div> 
@@ -352,7 +337,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               <img src="resources/images/img_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
               <div class="h-entry-inner">
                 <h2 class="font-size-regular"><a href="#">Etiquette tips for travellers</a></h2>
-                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span> May 5th, 2019</div>
+                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span> May 5th, 2019</div>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
               </div>
             </div> 
@@ -362,7 +347,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               <img src="resources/images/img_3.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
               <div class="h-entry-inner">
                 <h2 class="font-size-regular"><a href="#">Etiquette tips for travellers</a></h2>
-                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span> May 5th, 2019</div>
+                <div class="meta mb-4">by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span> May 5th, 2019</div>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
               </div>
             </div>
@@ -450,8 +435,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         </div>
       </div>
     </footer>
-  </div>
-
+  
   <script src="resources/js/jquery-3.3.1.min.js"></script>
   <script src="resources/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="resources/js/jquery-ui.js"></script>
