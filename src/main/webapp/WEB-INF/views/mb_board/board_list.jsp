@@ -33,22 +33,22 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="/resources/mb/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/resources/main/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/mb/css/magnific-popup.css">
-    <link rel="stylesheet" href="/resources/mb/css/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/mb/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/resources/mb/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/resources/main/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/main/css/magnific-popup.css">
+    <link rel="stylesheet" href="/resources/main/css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/main/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/resources/main/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/resources/main/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="/resources/mb/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/resources/main/fonts/flaticon/font/flaticon.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/aos.css">
-    <link rel="stylesheet" href="/resources/mb/css/rangeslider.css">
+    <link rel="stylesheet" href="/resources/main/css/aos.css">
+    <link rel="stylesheet" href="/resources/main/css/rangeslider.css">
 
-    <link rel="stylesheet" href="/resources/mb/css/style.css">
+    <link rel="stylesheet" href="/resources/main/css/style.css">
 
 </head>
 
@@ -109,7 +109,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
 
 
-        <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(/resources/images/man.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(/resources/mb/images/man.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
 
@@ -139,7 +139,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 							<div class="d-block d-md-flex listing-horizontal">
 
 								<a href="#" class="img d-block"
-									style="background-image: url('/uplod/${i.photo[0]}')"> <span
+									style="background-image: url('/upload/${i.photo[0]}')"> <span
 									class="category">Restaurants</span>
 								</a>
 								<div class="lh-content">
@@ -355,20 +355,20 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             </div>
         </div>
     </footer>
-    <script src="/resources/mb/js/jquery-3.3.1.min.js"></script>
-    <script src="/resources/mb/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="/resources/mb/js/jquery-ui.js"></script>
-    <script src="/resources/mb/js/popper.min.js"></script>
-    <script src="/resources/mb/js/bootstrap.min.js"></script>
-    <script src="/resources/mb/js/owl.carousel.min.js"></script>
-    <script src="/resources/mb/js/jquery.stellar.min.js"></script>
-    <script src="/resources/mb/js/jquery.countdown.min.js"></script>
-    <script src="/resources/mb/js/jquery.magnific-popup.min.js"></script>
-    <script src="/resources/mb/js/bootstrap-datepicker.min.js"></script>
-    <script src="/resources/mb/js/aos.js"></script>
-    <script src="/resources/mb/js/rangeslider.min.js"></script>
+    <script src="/resources/main/js/jquery-3.3.1.min.js"></script>
+    <script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/resources/main/js/jquery-ui.js"></script>
+    <script src="/resources/main/js/popper.min.js"></script>
+    <script src="/resources/main/js/bootstrap.min.js"></script>
+    <script src="/resources/main/js/owl.carousel.min.js"></script>
+    <script src="/resources/main/js/jquery.stellar.min.js"></script>
+    <script src="/resources/main/js/jquery.countdown.min.js"></script>
+    <script src="/resources/main/js/jquery.magnific-popup.min.js"></script>
+    <script src="/resources/main/js/bootstrap-datepicker.min.js"></script>
+    <script src="/resources/main/js/aos.js"></script>
+    <script src="/resources/main/js/rangeslider.min.js"></script>
 
-    <script src="/resources/mb/js/main.js"></script>
+    <script src="/resources/main/js/main.js"></script>
 
 </body>
 
