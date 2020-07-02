@@ -1,22 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 
-////////////////////////////////////////////////////////////////
 
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
 

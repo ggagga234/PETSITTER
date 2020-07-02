@@ -1,14 +1,22 @@
 package kh.pet.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kh.pet.dto.MemboardDto;
+import kh.pet.service.Petservice;
+
 @Controller
 @RequestMapping("/admin/")
 public class AdminController {
+	
+	@Autowired
+	private Petservice pet_service; 
 	
 	@Autowired
 	private HttpSession session;
@@ -39,7 +47,12 @@ public class AdminController {
 	}
 	
 	@RequestMapping("board")
-	public String go_admin_board() {
+	public String go_admin_board(Integer cpage) {
+		if(cpage ==null) {
+			cpage = 1;
+		}
+		List<MemboardDto> mblist = pet_service.mb_boardList(cpage);
+		session.setAttribute("list", mblist);
 		return "admin/board_management";
 	}
 	

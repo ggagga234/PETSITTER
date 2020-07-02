@@ -12,7 +12,7 @@
 
 <!-- mb_seq -> 아이디값으로 수정 -->
 <select id="redlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=1
+	select * from mem_board where mb_seq=3
 </select>
 
 <select id="petphoto" resultType="String">
@@ -32,7 +32,7 @@
 </select>
 
 <update id="Memboardupdate">
-	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=${mb_seq}
+	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name,jdbcType=VARCHAR},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=${mb_seq}
 </update>
 
 <select id="getArticleCount" resultType="int">

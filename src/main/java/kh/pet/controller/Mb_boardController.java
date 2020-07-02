@@ -35,6 +35,7 @@ public class Mb_boardController {
 	public String index(MemboardDto mdto) {
 		mdto.setMb_pet_name("aaaaa");
 		String id = "a";
+		System.out.println(mdto.getMb_service());
 		mdto.setMb_writer(id);
 		service.Memboardinsert(mdto);		
 		return "redirect:redlist";
@@ -47,6 +48,7 @@ public class Mb_boardController {
 		String add = "천호대로 79길 31";
 		String id = "a";
 		MemboardDto mlist = service.redlist();
+		System.out.println(mlist.getMb_service());
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");

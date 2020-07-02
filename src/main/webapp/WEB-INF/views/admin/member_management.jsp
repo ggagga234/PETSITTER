@@ -100,90 +100,44 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <nav class="navbar navbar-light ">
-                                            <a class="navbar-brand">회원 정보</a>
+                                            <a class="navbar-brand ">회원 정보</a>
                                             <form class="form-inline d-none d-sm-block">
                                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                                                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                                             </form>
                                         </nav>
                                     </div>
-                                    <div class="col-12">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <th>회원 명</th>
-                                                <th>회원 종류</th>
-                                                <th>가입 날짜</th>
-                                                <th>포인트 현황</th>
-                                                <th>경고 횟수</th>
-                                                <th>현재 상태</th>
-                                                <th>메세지</th>
-                                                <th>상태 변경</th>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    바보
-                                                </td>
-                                                <td>
-                                                    시터
-                                                </td>
-                                                <td>
-                                                    20.11.30
-                                                </td>
-                                                <td>
-                                                    1441
-                                                </td>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td>
-                                                    통상
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">보내기</button>
-                                                </td>
-                                                <td>
-                                                    <form>
-                                                        <select name="state" class="btn btn-info dropdown-toggle btn-sm">
-                                                            <option value="통상">통상</option>
-                                                            <option value="통상">정지</option>
-                                                        </select>
-                                                        <button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">변경</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    머저리
-                                                </td>
-                                                <td>
-                                                    일반
-                                                </td>
-                                                <td>
-                                                    20.10.30
-                                                </td>
-                                                <td>
-                                                    1420
-                                                </td>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    정지
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">보내기</button>
-                                                </td>
-                                                <td>
-                                                    <form>
-                                                        <select name="state" class="btn btn-info dropdown-toggle btn-sm">
-                                                            <option value="통상">통상</option>
-                                                            <option value="통상">정지</option>
-                                                        </select>
-                                                        <button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">변경</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                   <div class="col-12">
+                                    	<div class="row head">
+		                                   	<div class="col-4 col-lg">회원명</div>
+		                                   	<div class="col-4 col-lg">회원 종류</div>
+		                                   	<div class="d-none d-lg-block col-lg">가입 날짜</div>
+		                                   	<div class="d-none d-lg-block col-lg">포인트</div>
+		                                   	<div class="col-4 col-lg">경고</div>
+		                                   	<div class="col-4 col-lg">상태</div>
+		                                   	<div class="col-4 col-lg">메세지</div>
+		                                   	<div class="col-4 col-lg">상태 변경</div>
+                                    	</div>
+                                    	<hr class="hr2">
+                                    	<div class="row body">
+                                    		<div class="col-4 col-lg">asd</div>
+		                                   	<div class="col-4 col-lg">펫 시터</div>
+		                                   	<div class="d-none d-lg-block col-lg">2020.10.10</div>
+		                                   	<div class="d-none d-lg-block col-lg">1000</div>
+		                                   	<div class="col-4 col-lg">2</div>
+		                                   	<div class="col-4 col-lg">통상</div>
+		                                   	<div class="col-4 col-lg"><button  class="btn btn-outline-primary my-2 my-sm-0 btn-sm">보내기</button></div>
+		                                   	<div class="col-4 col-lg">
+			                                   	<form>
+	                                                 <select name="state" class="btn btn-info dropdown-toggle btn-sm">
+	                                                     <option value="통상">통상</option>
+	                                                     <option value="통상">정지</option>
+	                                                 </select>
+	                                                 <button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">변경</button>
+	                                             </form>
+                                             </div>
+                                    	</div>   
+                                    	<hr class="hr2">    
                                     </div>
                                 </div>
                             </div>
