@@ -160,7 +160,6 @@
 
 		<div class="site-section bg-light">
 			<div class="container">
-				<form action="index" method="post">
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="d-block d-md-flex listing-horizontal">
@@ -234,14 +233,15 @@
 									</c:if>
 								</div>
 							</div>
-
+							<c:if test="${mlist.mb_writer} == ${sessid}">
+								<div>
+									<a href="/mb/modified?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="modified">수정</a>
+									<a href="/mb/deleteboard?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="delete">삭제</a>
+								</div>
+							</c:if>		
 							<div>
-								<input class="btn btn-primary text-white" type="button"
-									id="modified" value="수정"> <input
-									class="btn btn-primary text-white" type="button" id="delete"
-									value="삭제">
-							</div>
-
+								<a href="/mb/mb_board" class="btn btn-primary text-white" id="modified">목록</a>
+							</div>	
 							<div class="col-12 mt-5 text-center"></div>
 
 						</div>
@@ -567,10 +567,14 @@
 				locale : "de",
 				range_select : false
 			})
-		})
-	</script>
-	<script>
-		$(function() {
+			
+			var range = my_calendar.getRange();
+			var start = "${mlist.mb_startday}";
+           	var end = "${mlist.mb_endday}";			 
+           	var startcon = moment(range.start)
+           	var endcon = moment(range.end);
+            var duration = moment.duration(endcon.diff(startcon)).asDays();
+			           
 			var point = 0;
 			
 			<c:forEach var = "j" items="${services}">
@@ -579,6 +583,7 @@
 			<c:forEach var="i" items="${pettype}">
 				<c:forEach var = "l" items="${timetype}">
 				console.log("${l}");
+				console.log("${i}");
 				if ("${i}" == "소" && ("${l}" != "am") && ("${l}" != "pm") && ("${l}" != "full")) {
 					point += 50;
 				} else if ("${i}" == "중" && ("${l}" != "am") && ("${l}" != "pm") && ("${l}" != "full")) {
@@ -596,12 +601,7 @@
 				}
 				</c:forEach>
 			</c:forEach>
-			$(".price span").html(point);
-		})
-	</script>
-	<script>
-		$("#modified").on("click",function(){
-			location.href="modified?mb_seq="+${mlist.mb_seq};
+			$(".price span").html(point*duration);
 		})
 	</script>
 </body>

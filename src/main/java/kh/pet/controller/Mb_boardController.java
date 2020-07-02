@@ -33,20 +33,19 @@ public class Mb_boardController {
 	//	예약등록 - 1
 	@RequestMapping("index")
 	public String index(MemboardDto mdto) {
-		mdto.setMb_pet_name("aaaaa");
 		String id = "a";
 		mdto.setMb_writer(id);
-		service.Memboardinsert(mdto);		
+		service.Memboardinsert(mdto);
+		
 		return "redirect:redlist";
 	}
-	
-	
 	// 등록뷰 보드seq값추가해줘야함	
 	@RequestMapping("redlist")
-	public String redlist(Model m) {
+	public String redlist(Model m,MemboardDto mdto) {
 		String add = "천호대로 79길 31";
 		String id = "a";
-		MemboardDto mlist = service.redlist();
+		int mb_seq = service.seqid(id);
+		MemboardDto mlist = service.redlist(mb_seq);
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");
@@ -60,15 +59,19 @@ public class Mb_boardController {
 			timetype.add(time);
 		}
 		for(String petname : petnamearr) {
+			System.out.println(petname);
 			pettype.add(service.getpettype(petname));
 		}
 		for(String petname : petnamearr) {
+			
 			petphoto.add(service.petphoto(petname));
 		}
 		for(String service : servicearr) {
 			services.add(service);
 		}
-
+		
+		System.out.println(pettype);
+		
 		m.addAttribute("times", times);
 		m.addAttribute("mlist", mlist);
 		m.addAttribute("add", add);
@@ -118,18 +121,28 @@ public class Mb_boardController {
 
 	@RequestMapping("modified_con")
 	public String modified_con(MemboardDto mdto) {
+		System.out.println(mdto.getMb_pet_name());
+		System.out.println(mdto.getMb_startday());
+		System.out.println(mdto.getMb_endday());
+		System.out.println(mdto.getMb_unique());
+		System.out.println(mdto.getMb_time());
+		System.out.println(mdto.getMb_service());
+
 		service.Memboardupdate(mdto);	
 		return "redirect:redlist";
 	}
 
 	@RequestMapping("mb_board")
 	public String mb_board(Model m,HttpServletRequest req) throws Exception{
+
 		 int cpage = 1;
+		
 		 try {
 	         cpage= Integer.parseInt(req.getParameter("cpage"));
 	      } catch(Exception e) {}
 
 		List<MemboardDto> mblist = service.mb_boardList(cpage);
+		
 		System.out.println(mblist.size());
 		for(MemboardDto mb : mblist) {
 			if(mb.getMb_petphoto() != null) {
@@ -137,9 +150,18 @@ public class Mb_boardController {
 				mb.setPhoto(photoarr);
 			}
 		}
+  
+		System.out.println("현재페이지 : "+cpage);
 		String navi = service.getPageNavi(cpage);
 		m.addAttribute("navi", navi);
 		m.addAttribute("mblist", mblist);
 		return "mb_board/board_list";
 	}
+	
+	@RequestMapping("deleteboard")
+	public String deleteboard(MemboardDto mdto) {
+		service.deleteboard(mdto);
+		return "redirect:mb_board";
+	}
+
 }
