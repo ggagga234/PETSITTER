@@ -139,13 +139,11 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 							<div class="d-block d-md-flex listing-horizontal">
 
 								<a href="#" class="img d-block"
-									style="background-image: url('/uplod/${i.photo[0]}')"> <span
-									class="category">Restaurants</span>
+									style="background-image: url('/upload/${i.photo[0]}')">
 								</a>
 								<div class="lh-content">
-									<a href="#" class="bookmark"><span class="icon-heart"></span></a>
 									<h3>
-										<a href="#">${i.mb_title}</a>
+										<a href="/mb/redlist">${i.mb_title}</a>
 									</h3>
 								</div>
 							</div>
@@ -153,11 +151,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
 						<div class="col-12 mt-5 text-center">
                             <div class="custom-pagination">
-                                <span>1</span>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <span class="more-page">...</span>
-                                <a href="#">10</a>
+                                ${navi}
                             </div>
                         </div>
 
@@ -165,33 +159,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                     <div class="col-lg-3 ml-auto">
 
                         <div class="mb-5">
-                            <h3 class="h5 text-black mb-3">Filters</h3>
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <input type="text" placeholder="What are you looking for?" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <div class="select-wrap">
-                                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="">All Categories</option>
-                                            <option value="">Appartment</option>
-                                            <option value="">Restaurant</option>
-                                            <option value="">Eat &amp; Drink</option>
-                                            <option value="">Events</option>
-                                            <option value="">Fitness</option>
-                                            <option value="">Others</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- select-wrap, .wrap-icon -->
-                                    <div class="wrap-icon">
-                                        <span class="icon icon-room"></span>
-                                        <input type="text" placeholder="Location" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                            <a href="/mb/home" class="btn btn-primary text-white" id="board_add" style="line-height: 35px">등록하기</a>
                         </div>
 
                         <div class="mb-5">
