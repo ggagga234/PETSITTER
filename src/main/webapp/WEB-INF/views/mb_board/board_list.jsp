@@ -316,9 +316,6 @@
     <script src="/resources/main/js/bootstrap-datepicker.min.js"></script>
     <script src="/resources/main/js/aos.js"></script>
     <script src="/resources/main/js/rangeslider.min.js"></script>
-
     <script src="/resources/main/js/main.js"></script>
-
 </body>
-
 </html>
