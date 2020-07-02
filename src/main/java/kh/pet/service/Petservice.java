@@ -26,8 +26,8 @@ public class Petservice {
 		return dao.Memboardinsert(mdto);
 	}
 	
-	public MemboardDto redlist(){
-		return dao.redlist();
+	public MemboardDto redlist(MemboardDto mdto){
+		return dao.redlist(mdto);
 	}
 	
 	public String petphoto(String  mb_pet_name) {
@@ -48,6 +48,10 @@ public class Petservice {
 	
 	public int Memboardupdate(MemboardDto mdto) {
 		return dao.Memboardupdate(mdto);
+	}
+	
+	public int deleteboard(MemboardDto mdto) {
+		return dao.deleteboard(mdto);
 	}
 	
 	public List<MemboardDto> mb_boardList(int cpage){
@@ -102,11 +106,11 @@ public class Petservice {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		if(needPrev) {sb.append("<li style='list-style:none'><a href='/mb/mb_board?cpage="+(startNavi-1)+"'>< </a>"+"</li>");}
+		if(needPrev) {sb.append("<a href='/mb/mb_board?cpage="+(startNavi-1)+"'>< </a>");}
 		for(int i = startNavi;i<= endNavi;i++) {
-			sb.append("<li style='list-style:none'><a href='/mb/mb_board?cpage="+i+"'>"+i+"</a></li>");
+			sb.append("<a href='/mb/mb_board?cpage="+i+"'>"+i+"</a>");
 		}
-		if(needNext) {sb.append("<li style='list-style:none'><a href='/mb/mb_board?cpage="+(endNavi+1)+"'> ></a>"+"</li>");}
+		if(needNext) {sb.append("<a href='/mb/mb_board?cpage="+(endNavi+1)+"'> ></a>");}
 		
 		return sb.toString();
 	}

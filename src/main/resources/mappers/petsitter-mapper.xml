@@ -12,7 +12,7 @@
 
 <!-- mb_seq -> 아이디값으로 수정 -->
 <select id="redlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=1
+	select * from mem_board where mb_seq=#{mb_seq}
 </select>
 
 <select id="petphoto" resultType="String">
@@ -42,4 +42,8 @@
 <select id="mb_boardList" resultType="kh.pet.dto.MemboardDto">
 	select * from (select mem_board.*,row_number()over (order by mb_seq desc) rnum from mem_board) where rnum between ${start} and ${end}
 </select>
+
+<delete id="deleteboard">
+	delete mem_board where mb_seq=#{mb_seq}
+</delete>
 </mapper>

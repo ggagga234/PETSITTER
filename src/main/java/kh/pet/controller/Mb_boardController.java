@@ -41,10 +41,10 @@ public class Mb_boardController {
 	}
 	// 등록뷰 보드seq값추가해줘야함	
 	@RequestMapping("redlist")
-	public String redlist(Model m) {
+	public String redlist(Model m,MemboardDto mdto) {
 		String add = "천호대로 79길 31";
 		String id = "a";
-		MemboardDto mlist = service.redlist();
+		MemboardDto mlist = service.redlist(mdto);
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");
@@ -153,6 +153,11 @@ public class Mb_boardController {
 		m.addAttribute("navi", navi);
 		m.addAttribute("mblist", mblist);
 		return "mb_board/board_list";
+	}
+	@RequestMapping("deleteboard")
+	public String deleteboard(MemboardDto mdto) {
+		service.deleteboard(mdto);
+		return "redirect:mb_board";
 	}
 
 }

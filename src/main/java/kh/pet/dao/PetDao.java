@@ -23,8 +23,8 @@ public class PetDao {
 		return mybatis.insert("petsitter.memboardinsert", mdto);
 	}
 	
-	public MemboardDto redlist(){
-		return mybatis.selectOne("petsitter.redlist");
+	public MemboardDto redlist(MemboardDto mdto){
+		return mybatis.selectOne("petsitter.redlist",mdto);
 	}
 	
 	public String petphoto(String mb_pet_name) {
@@ -56,5 +56,8 @@ public class PetDao {
 		return mybatis.selectOne("getArticleCount");
 	}
 	
+	public int deleteboard(MemboardDto mdto) {
+		return mybatis.delete("deleteboard", mdto);
+	}
 	
 }

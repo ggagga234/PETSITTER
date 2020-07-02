@@ -248,12 +248,15 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 									</c:if>
 								</div>
 							</div>
-							
+							<c:if test="${mlist.mb_writer} == ${sessid}">
 								<div>
-									<input class="btn btn-primary text-white" type="button" id="modified" value="수정">
-									<input class="btn btn-primary text-white" type="button" id="delete" value="삭제">
-								</div>		
-										
+									<a href="/mb/modified?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="modified">수정</a>
+									<a href="/mb/deleteboard?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="delete">삭제</a>
+								</div>
+							</c:if>		
+							<div>
+								<a href="/mb/mb_board" class="btn btn-primary text-white" id="modified">목록</a>
+							</div>	
 							<div class="col-12 mt-5 text-center"></div>
 
 						</div>
@@ -611,11 +614,6 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 				</c:forEach>
 			</c:forEach>
 			$(".price span").html(point);
-		})
-	</script>
-	<script>
-		$("#modified").on("click",function(){
-			location.href="modified?mb_seq="+${mlist.mb_seq};
 		})
 	</script>
 </body>
