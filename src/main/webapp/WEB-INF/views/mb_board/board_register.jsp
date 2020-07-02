@@ -287,32 +287,32 @@
 
 										<div id="timelist">
 											<div>
-												<input type="checkbox" class="selectime" value="first"
+												<input type="checkbox" class="selectime ba" value="first"
 													name="mb_time" id="first"><label for="first"><span></span>1부
 													09:00 ~ 11:00</label>
 											</div>
 											<div>
-												<input type="checkbox" class="selectime" value="second"
+												<input type="checkbox" class="selectime ba" value="second"
 													name="mb_time" id="second"><label for="second"><span></span>2부
 													11:00 ~ 13:00</label>
 											</div>
 											<div>
-												<input type="checkbox" class="selectime" value="third"
+												<input type="checkbox" class="selectime ba" value="third"
 													name="mb_time" id="third"><label for="third"><span></span>3부
 													13:00 ~ 15:00</label>
 											</div>
 											<div>
-												<input type="checkbox" class="selectime" value="fourth"
+												<input type="checkbox" class="selectime ba" value="fourth"
 													name="mb_time" id="fourth"><label for="fourth"><span></span>4부
 													15:00 ~ 17:00</label>
 											</div>
 											<div>
-												<input type="checkbox" class="selectime" value="fifth"
+												<input type="checkbox" class="selectime ba" value="fifth"
 													name="mb_time" id="fifth"><label for="fifth"><span></span>5부
 													17:00 ~ 19:00</label>
 											</div>
 											<div>
-												<input type="checkbox" class="selectime" value="sixth"
+												<input type="checkbox" class="selectime ba" value="sixth"
 													name="mb_time" id="sixth"><label for="sixth"><span></span>6부
 													19:00 ~ 21:00</label>
 											</div>
@@ -524,6 +524,22 @@
 					src.push($(this).data("imgsrc"));
 				})					
 				$("#petphoto").val(src);
+			})
+			
+			$(".selectime").on("click",function(){
+				if($(this).prop("checked") == true && $("#am").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#full").prop("checked",false);
+				}
+				if($(this).prop("checked") == true && $("#pm").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#full").prop("checked",false);
+				}
+				if($(this).prop("checked") == true && $("#full").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#am").prop("checked",false);
+					$("#pm").prop("checked",false);
+				}	
 			})
 		})
 	</script>
