@@ -1,6 +1,7 @@
 package kh.pet.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,14 @@ public class PetDao {
 		return mybatis.update("Memboardupdate", mdto);
 	}
 	
-	public List<MemboardDto> listselect(){
-		return mybatis.selectList("listselect");
+	
+	public List<MemboardDto> mb_boardList(Map<String,Integer> con){
+		return mybatis.selectList("mb_boardList",con);
 	}
+	
+	public int getArticleCount() {
+		return mybatis.selectOne("getArticleCount");
+	}
+	
+	
 }

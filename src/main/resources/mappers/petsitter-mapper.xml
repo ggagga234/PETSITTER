@@ -35,7 +35,11 @@
 	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=${mb_seq}
 </update>
 
-<select id="listselect" resultType="kh.pet.dto.MemboardDto">
- select * from mem_board order by 1 desc
+<select id="getArticleCount" resultType="int">
+ select count(*) from mem_board
+</select>
+
+<select id="mb_boardList" resultType="kh.pet.dto.MemboardDto">
+	select * from (select mem_board.*,row_number()over (order by mb_seq desc) rnum from mem_board) where rnum between ${start} and ${end}
 </select>
 </mapper>
