@@ -115,7 +115,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-						
 						<c:forEach var="i" items="${mblist}">
 							<c:if test="${i.mb_restatus eq 'no'}">
 							<div class="d-block d-md-flex listing-horizontal">

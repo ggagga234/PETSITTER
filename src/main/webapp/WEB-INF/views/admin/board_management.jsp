@@ -106,11 +106,11 @@
 							<div class="row">
 								<div class="col-12" style="text-align: left">
 									<nav class="navbar navbar-light ">
-										<form>
-											<select name="state" class="btn btn-info dropdown-toggle">
-												<option value="자유">자유게시판</option>
-												<option value="구인">반려인게시판</option>
-												<option value="자유">구직</option>
+										<form action="/admin/boardselect">
+											<select name="boardtype" class="btn btn-info dropdown-toggle">
+												<option value="free">자유게시판</option>
+												<option value="mb_board">반려인게시판</option>
+												<option value="aaa">구직</option>
 											</select>
 											<button class="btn btn-outline-primary my-2 my-sm-0">검색</button>
 										</form>
@@ -138,14 +138,19 @@
 										<div class="col-4 col-lg"><a href="/mb/redlist">${i.mb_title}</a></div>
 										<div class="col-4 col-lg">${i.mb_writer}</div>
 										<div class="col-4 col-lg">${i.mb_date}</div>
-										<div class="col-4 col-lg">정지</div>
 										<div class="col-4 col-lg">
-											<form>
+											<c:choose>
+												<c:when test="${i.mb_restatus eq 'no'}">통상</c:when>
+												<c:otherwise>정지</c:otherwise>
+											</c:choose>
+										</div>
+										<div class="col-4 col-lg">
+											<form action="/admin/boardblack">
 												<select name="state"
 													class="btn btn-info dropdown-toggle btn-sm">
-													<option value="통상">통상</option>
-													<option value="정지">정지</option>
-													<option value="삭제">삭제</option>
+													<option value="no">통상</option>
+													<option value="stop">정지</option>
+													<option value="delete">삭제</option>
 												</select>
 												<button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">변경</button>
 											</form>

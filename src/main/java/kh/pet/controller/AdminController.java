@@ -48,11 +48,25 @@ public class AdminController {
 	
 	@RequestMapping("board")
 	public String go_admin_board(Integer cpage) {
-		if(cpage ==null) {
-			cpage = 1;
+		return "admin/board_management";
+	}
+	
+	@RequestMapping("boardselect")
+	public String boardselect(String boardtype, Integer cpage) {
+		System.out.println(boardtype);
+		if(boardtype == "mb_board") {
+			if(cpage == null) {
+				cpage = 1;
+			}
+			List<MemboardDto> mblist = pet_service.mb_boardList(cpage);
+			session.setAttribute("list", mblist);
 		}
-		List<MemboardDto> mblist = pet_service.mb_boardList(cpage);
-		session.setAttribute("list", mblist);
+		return "admin/board_management";
+	}
+	
+	@RequestMapping("boardblack")
+	public String boardblack(String state) {
+		System.out.println(state);
 		return "admin/board_management";
 	}
 	
