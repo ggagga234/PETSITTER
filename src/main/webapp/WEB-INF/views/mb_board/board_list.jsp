@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- 
-////////////////////////////////////////////////////////////////
-
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,6 +35,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     <link rel="stylesheet" href="/resources/main/css/style.css">
 
 </head>
+
 
 <body>
 
@@ -114,16 +99,12 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                 <div class="row align-items-center justify-content-center text-center">
 
                     <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
-
-
                         <div class="row justify-content-center">
                             <div class="col-md-8 text-center">
                                 <h1>Listings</h1>
                                 <p data-aos="fade-up" data-aos-delay="100">Handcrafted free templates by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -137,15 +118,11 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 						
 						<c:forEach var="i" items="${mblist}">
 							<div class="d-block d-md-flex listing-horizontal">
-
-								<a href="#" class="img d-block"
-									style="background-image: url('/upload/${i.photo[0]}')"> <span
-									class="category">Restaurants</span>
+								<a href="#" class="img d-block" style="background-image: url('/upload/${i.photo[0]}')">
 								</a>
 								<div class="lh-content">
-									<a href="#" class="bookmark"><span class="icon-heart"></span></a>
 									<h3>
-										<a href="#">${i.mb_title}</a>
+										<a href="/mb/redlist">${i.mb_title}</a>
 									</h3>
 								</div>
 							</div>
@@ -153,11 +130,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
 						<div class="col-12 mt-5 text-center">
                             <div class="custom-pagination">
-                                <span>1</span>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <span class="more-page">...</span>
-                                <a href="#">10</a>
+                                ${navi}
                             </div>
                         </div>
 
@@ -165,33 +138,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                     <div class="col-lg-3 ml-auto">
 
                         <div class="mb-5">
-                            <h3 class="h5 text-black mb-3">Filters</h3>
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <input type="text" placeholder="What are you looking for?" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <div class="select-wrap">
-                                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="">All Categories</option>
-                                            <option value="">Appartment</option>
-                                            <option value="">Restaurant</option>
-                                            <option value="">Eat &amp; Drink</option>
-                                            <option value="">Events</option>
-                                            <option value="">Fitness</option>
-                                            <option value="">Others</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- select-wrap, .wrap-icon -->
-                                    <div class="wrap-icon">
-                                        <span class="icon icon-room"></span>
-                                        <input type="text" placeholder="Location" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
+                            <a href="/mb/home" class="btn btn-primary text-white" id="board_add" style="line-height: 35px">등록하기</a>
                         </div>
 
                         <div class="mb-5">
@@ -248,7 +195,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         </div>
     </div>
 
-    <div class="site-section">
+   <div class="site-section">
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 text-center border-primary">
@@ -290,7 +237,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             </div>
         </div>
     </div>
-
+</div>
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -354,6 +301,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                 </div>
             </div>
         </div>
+       
     </footer>
     <script src="/resources/main/js/jquery-3.3.1.min.js"></script>
     <script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>

@@ -74,7 +74,7 @@
 								<li class="active"><a href="tmp"><span>메세지</span></a>
 								</li>
 								<li><a href="adminindex"><span>관리자</span></a></li>
-								<li><a href="mb/mb_board"><span>반려인 게시판</span></a></li>
+								<li><a href="mb/mb_board?cpage=1"><span>반려인 게시판</span></a></li>
 								<li><a href="mypage"><span>MyPage</span></a></li>
 								<li><a href="#"><span>Sing Up</span></a></li>
 								<li><a href="#"><span>Login</span></a></li>
@@ -579,7 +579,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the
@@ -596,7 +596,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the
@@ -613,7 +613,7 @@
 								<a href="#">Etiquette tips for travellers</a>
 							</h2>
 							<div class="meta mb-4">
-								by <a href="#">Jeff Sheldon</a> <span class="mx-2">&bullet;</span>
+								by <a href="#">Jeff Sheldon</a> <span class="mx-2"></span>
 								May 5th, 2020
 							</div>
 							<p>Far far away, behind the word mountains, far from the

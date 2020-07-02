@@ -303,47 +303,47 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 										<div id="timelist">
 											<div>
 												<input type="checkbox" class="selectime" value="first"
-													name="mb_time" id="first"><label for="first"><span></span>&nbsp;&nbsp;1부
+													name="mb_time" id="first"><label for="first"><span></span>1부
 													09:00 ~ 11:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="second"
-													name="mb_time" id="second"><label for="second"><span></span>&nbsp;&nbsp;2부
+													name="mb_time" id="second"><label for="second"><span></span>2부
 													11:00 ~ 13:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="third"
-													name="mb_time" id="third"><label for="third"><span></span>&nbsp;&nbsp;3부
+													name="mb_time" id="third"><label for="third"><span></span>3부
 													13:00 ~ 15:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="fourth"
-													name="mb_time" id="fourth"><label for="fourth"><span></span>&nbsp;&nbsp;4부
+													name="mb_time" id="fourth"><label for="fourth"><span></span>4부
 													15:00 ~ 17:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="fifth"
-													name="mb_time" id="fifth"><label for="fifth"><span></span>&nbsp;&nbsp;5부
+													name="mb_time" id="fifth"><label for="fifth"><span></span>5부
 													17:00 ~ 19:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="sixth"
-													name="mb_time" id="sixth"><label for="sixth"><span></span>&nbsp;&nbsp;6부
+													name="mb_time" id="sixth"><label for="sixth"><span></span>6부
 													19:00 ~ 21:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="am"
-													name="mb_time" id="am"><label for="am"><span></span>&nbsp;&nbsp;오전
+													name="mb_time" id="am"><label for="am"><span></span>오전
 													09:00 ~ 14:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="pm"
-													name="mb_time" id="pm"><label for="pm"><span></span>&nbsp;&nbsp;오후
+													name="mb_time" id="pm"><label for="pm"><span></span>오후
 													14:00 ~ 21:00</label>
 											</div>
 											<div>
 												<input type="checkbox" class="selectime" value="full"
-													name="mb_time" id="full"><label for="full"><span></span>&nbsp;&nbsp;풀타임
+													name="mb_time" id="full"><label for="full"><span></span>풀타임
 													09:00 ~ 20:00</label>
 											</div>
 										</div>

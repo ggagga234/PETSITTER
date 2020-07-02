@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 
-////////////////////////////////////////////////////////////////
-
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +21,10 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 <link rel="stylesheet" href="/resources/main/css/magnific-popup.css">
 <link rel="stylesheet" href="/resources/main/css/jquery-ui.css">
 <link rel="stylesheet" href="/resources/main/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/resources/main/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/resources/main/css/bootstrap-datepicker.css">
+<link rel="stylesheet"
+	href="/resources/main/css/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="/resources/main/css/bootstrap-datepicker.css">
 <link rel="stylesheet"
 	href="/resources/main/fonts/flaticon/font/flaticon.css">
 <link rel="stylesheet" href="/resources/main/css/aos.css">
@@ -177,7 +163,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 				<form action="index" method="post">
 					<div class="row">
 						<div class="col-lg-7">
-						<div class="d-block d-md-flex listing-horizontal">
+							<div class="d-block d-md-flex listing-horizontal">
 								<div class="lh-content">
 									<h3>제목</h3>
 									<c:if test="${!empty mlist}">
@@ -185,7 +171,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 									</c:if>
 								</div>
 							</div>
-						
+
 							<div class="d-block d-md-flex listing-horizontal">
 								<c:if test="${!empty mlist}">
 									<div class="petselec">
@@ -248,11 +234,14 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 									</c:if>
 								</div>
 							</div>
-							
-								<div>
-									<input class="btn btn-primary text-white" type="button" id="modified" value="수정">
-									<input class="btn btn-primary text-white" type="button" id="delete" value="삭제">
-								</div>				
+
+							<div>
+								<input class="btn btn-primary text-white" type="button"
+									id="modified" value="수정"> <input
+									class="btn btn-primary text-white" type="button" id="delete"
+									value="삭제">
+							</div>
+
 							<div class="col-12 mt-5 text-center"></div>
 
 						</div>
@@ -412,10 +401,10 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 									<div class="mb-5">
 										<div id="map" style="width: 100%; height: 350px;"></div>
 									</div>
-
 								</div>
 							</div>
 						</div>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -440,7 +429,6 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<footer class="site-footer">
 		<div class="container">
@@ -512,7 +500,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 				</div>
 			</div>
 		</div>
-	
+
 	</footer>
 	<script src="/resources/main/js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="/resources/main/js/jquery-ui.js"></script>
@@ -587,8 +575,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 			
 			<c:forEach var = "j" items="${services}">
 				$("#"+"${j}").css("color","red");
-			</c:forEach>
-			
+			</c:forEach>	
 			<c:forEach var="i" items="${pettype}">
 				<c:forEach var = "l" items="${timetype}">
 				console.log("${l}");
