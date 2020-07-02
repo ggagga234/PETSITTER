@@ -43,6 +43,7 @@
         <div class="col-12"  style="text-align: right">
          	<button id=write class="btn btn-outline-info btn-sm">새 메세지 작성</button>
             <button id=sedelete class="btn btn-outline-info btn-sm">삭제</button>
+            
         </div>
         <hr>
         <div class="col-12" style="text-align:center">
