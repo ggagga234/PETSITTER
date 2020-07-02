@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kh.pet.dto.MemboardDto;
+import kh.pet.service.AdminService;
 import kh.pet.service.Petservice;
 
 @Controller
@@ -17,6 +18,9 @@ public class AdminController {
 	
 	@Autowired
 	private Petservice pet_service; 
+	
+	@Autowired
+	private AdminService admin_service;
 	
 	@Autowired
 	private HttpSession session;
@@ -53,20 +57,29 @@ public class AdminController {
 	
 	@RequestMapping("boardselect")
 	public String boardselect(String boardtype, Integer cpage) {
-		System.out.println(boardtype);
-		if(boardtype == "mb_board") {
+		session.removeAttribute("list");
+		session.removeAttribute("boardtype");
+		if(boardtype.contentEquals("mb_board")) {
 			if(cpage == null) {
 				cpage = 1;
 			}
 			List<MemboardDto> mblist = pet_service.mb_boardList(cpage);
 			session.setAttribute("list", mblist);
 		}
+		session.setAttribute("boardtype", boardtype);
 		return "admin/board_management";
 	}
 	
 	@RequestMapping("boardblack")
-	public String boardblack(String state) {
-		System.out.println(state);
+	public String boardblack(String state, int seq) {
+		String boardtype = (String)session.getAttribute("boardtype");
+		if(state.contentEquals("delete")) {
+			
+		}
+		else{
+			System.out.println(seq+boardtype+state);
+			admin_service.board_stop(seq, boardtype, state);
+		}
 		return "admin/board_management";
 	}
 	

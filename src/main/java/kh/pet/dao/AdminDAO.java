@@ -15,8 +15,8 @@ public class AdminDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	public List<MemboardDto> mb_board_list(Map<String, Integer> map) {
-		return mybatis.selectList("select * from (select mem_board.*,row_number()over (order by mb_seq desc) rnum from mem_board) where rnum between ${start} and ${end}", map);
+	public int board_state(Map<String, Object> edit_date) {
+		return mybatis.update("Admin.board_state",edit_date);
 	}
 	
 }

@@ -133,7 +133,7 @@
 									</div>
 									<c:forEach var="i" items="${list}">
 									<hr class="hr2">
-									<div class="row">
+									<div class="row"> 
 										<div class="col-4 col-lg">${i.mb_seq}</div>
 										<div class="col-4 col-lg"><a href="/mb/redlist">${i.mb_title}</a></div>
 										<div class="col-4 col-lg">${i.mb_writer}</div>
@@ -146,8 +146,9 @@
 										</div>
 										<div class="col-4 col-lg">
 											<form action="/admin/boardblack">
+											<input type="text" value="${i.mb_seq}" name=seq style="display: none">
 												<select name="state"
-													class="btn btn-info dropdown-toggle btn-sm">
+													class="btn btn-info dropdown-toggle btn-sm">	
 													<option value="no">통상</option>
 													<option value="stop">정지</option>
 													<option value="delete">삭제</option>
