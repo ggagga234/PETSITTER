@@ -133,7 +133,7 @@ public class MemberController {
 			}
 			
 		}
-		return "/member/loginsucess";
+		return "redirect:/";
 
 	}
 	
