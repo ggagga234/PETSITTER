@@ -25,7 +25,7 @@ public class Petservice {
 		return dao.Memboardinsert(mdto);
 	}
 	
-	public MemboardDto redlist(int mb_seq){
+	public MemboardDto redlist(String mb_seq){
 		return dao.redlist(mb_seq);
 	}
 	
@@ -54,8 +54,12 @@ public class Petservice {
 		return dao.deleteboard(mdto);
 	}
 	
-	public int seqid(String id) {
+	public String seqid(String id) {
 		return dao.seqid(id);
+	}
+	
+	public String addselec(String id) {
+		return dao.addselec(id);
 	}
 	
 	public List<MemboardDto> mb_boardList(int cpage){

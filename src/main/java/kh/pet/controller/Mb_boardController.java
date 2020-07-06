@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kh.pet.dto.MemberDTO;
 import kh.pet.dto.MemboardDto;
 import kh.pet.dto.PetDto;
 import kh.pet.service.Petservice;
@@ -20,11 +22,17 @@ public class Mb_boardController {
 
 	@Autowired
 	private Petservice service; 
+	@Autowired
+	private HttpSession session;	
+	
 	//	반려인 등록게시판 정보 출력	
 	@RequestMapping("home")
 	public String home(Model m) {
 		List<PetDto> list = service.Petselect();
-		String add = "천호대로 79길 31";
+		MemberDTO mdto = (MemberDTO)this.session.getAttribute("loginInfo");
+		String add = service.addselec(mdto.getMem_id());
+		System.out.println(mdto.getMem_id());
+		System.out.println(add);
 		m.addAttribute("list", list);
 		m.addAttribute("add", add);
 		return "mb_board/board_register";
@@ -32,22 +40,23 @@ public class Mb_boardController {
 
 	//	예약등록 - 1
 	@RequestMapping("index")
-	public String index(MemboardDto mdto) {
-		String id = "a";
-		System.out.println(mdto.getMb_service());
-		mdto.setMb_writer(id);
-		service.Memboardinsert(mdto);
+	public String index(MemboardDto mbdto) {
+		MemberDTO mdto = (MemberDTO)this.session.getAttribute("loginInfo");
+		System.out.println(mbdto.getMb_service());
+		mbdto.setMb_writer(mdto.getMem_id());
+		service.Memboardinsert(mbdto);
 		
 		return "redirect:redlist";
 	}
 	
 	// 등록뷰 보드seq값추가해줘야함	
 	@RequestMapping("redlist")
-	public String redlist(Model m,MemboardDto mdto) {
-		String add = "천호대로 79길 31";
-		String id = "a";
-
-		int mb_seq = service.seqid(id);
+	public String redlist(Model m,MemboardDto mbdto) {
+		MemberDTO mdto = (MemberDTO)this.session.getAttribute("loginInfo");
+		String add = service.addselec(mdto.getMem_id());
+		System.out.println(mdto.getMem_id());
+		String mb_seq = service.seqid(mdto.getMem_id());
+		System.out.println(mb_seq);
 		MemboardDto mlist = service.redlist(mb_seq);
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
@@ -80,7 +89,7 @@ public class Mb_boardController {
 		m.addAttribute("add", add);
 		m.addAttribute("services", services);
 		m.addAttribute("pettype", pettype);
-		m.addAttribute("id", id);
+		m.addAttribute("id", mdto.getMem_id());
 		m.addAttribute("petphoto", petphoto);
 		m.addAttribute("timetype", timetype);
 		return "mb_board/board";
@@ -111,7 +120,7 @@ public class Mb_boardController {
 
 		List<PetDto> list = service.Petselect();
 
-		String add = "천호대로 79길 31";
+		String add = service.addselec(modlist.getMb_writer());
 		m.addAttribute("list", list);
 		m.addAttribute("add", add);	
 		m.addAttribute("modlist", modlist);	
@@ -123,15 +132,15 @@ public class Mb_boardController {
 	}
 
 	@RequestMapping("modified_con")
-	public String modified_con(MemboardDto mdto) {
-		System.out.println(mdto.getMb_pet_name());
-		System.out.println(mdto.getMb_startday());
-		System.out.println(mdto.getMb_endday());
-		System.out.println(mdto.getMb_unique());
-		System.out.println(mdto.getMb_time());
-		System.out.println(mdto.getMb_service());
+	public String modified_con(MemboardDto mbdto) {
+		System.out.println(mbdto.getMb_pet_name());
+		System.out.println(mbdto.getMb_startday());
+		System.out.println(mbdto.getMb_endday());
+		System.out.println(mbdto.getMb_unique());
+		System.out.println(mbdto.getMb_time());
+		System.out.println(mbdto.getMb_service());
 
-		service.Memboardupdate(mdto);	
+		service.Memboardupdate(mbdto);	
 		return "redirect:redlist";
 	}
 
@@ -162,8 +171,8 @@ public class Mb_boardController {
 	}
 	
 	@RequestMapping("deleteboard")
-	public String deleteboard(MemboardDto mdto) {
-		service.deleteboard(mdto);
+	public String deleteboard(MemboardDto mbdto) {
+		service.deleteboard(mbdto);
 		return "redirect:mb_board";
 	}
 

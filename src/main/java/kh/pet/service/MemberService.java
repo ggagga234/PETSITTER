@@ -75,7 +75,7 @@ public class MemberService {
                 .append("(�샊�떆 �옒紐� �쟾�떖�릺�뿀�떎硫�, �씠 �씠硫붿씪�쓣 臾댁떆�븯�뀛�룄 �맗�땲�떎)")
                 .append("<br>")
                 .append("<br>")
-                .append("<a href='http://192.168.60.25:8080/member/emailConfirm?authKey=")
+                .append("<a href='http://localhost/member/emailConfirm?authKey=")
                 .append(key)
                 .append("&userid=")
                 .append(id)

@@ -233,7 +233,7 @@
 									</c:if>
 								</div>
 							</div>
-							<c:if test="${mlist.mb_writer} == ${sessid}">
+							<c:if test="${mlist.mb_writer eq id}">
 								<div>
 									<a href="/mb/modified?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="modified">수정</a>
 									<a href="/mb/deleteboard?mb_seq=${mlist.mb_seq}" class="btn btn-primary text-white" id="delete">삭제</a>
