@@ -61,4 +61,9 @@ public class HomeController {
 		model.addAttribute("point",mem_point);
 		return "/petsitter_board/point/payment";
 	}
+	
+	@RequestMapping("/signup")
+	public String signup() {
+		return "member/signup";
+	}
 }

@@ -200,7 +200,7 @@
 	<div class="site-section">
 	
 	    <!-- ======= Services Section ======= -->
-	<section id="scroll-services" class="services ">
+	<section id="scroll-services" class="services">
       <div class="container">
 		
 		<div class="row mb-5">
@@ -286,7 +286,7 @@
       </div>
     </section><!-- End Services Section -->
 		<!-- ======= Pricing Section ======= -->
-	<section id="scroll-pricing" class="pricing ">
+	<section id="scroll-pricing" class="pricing">
       <div class="container" data-aos="fade-up">
 
  		<div class="row mb-5">
@@ -393,9 +393,9 @@
             </div>
 		</div>	
       </div>
+      </div>
    </section><!-- End Pricing Section -->
 	</div>
-
 
 	<jsp:include page="/WEB-INF/views/petsitter_board/footer.jsp"/>
 	</body>
