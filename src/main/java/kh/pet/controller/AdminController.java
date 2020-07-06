@@ -1,7 +1,9 @@
 package kh.pet.controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,7 @@ public class AdminController {
 	
 	@RequestMapping("reservation")
 	public String go_admin_reservation() {
+		
 		return "admin/reservation_management";
 	}
 	
@@ -71,16 +74,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping("boardblack")
-	public String boardblack(String state, int seq) {
+	public void boardblack(String state, int seq,HttpServletResponse response) {
 		String boardtype = (String)session.getAttribute("boardtype");
-		if(state.contentEquals("delete")) {
-			
+		admin_service.board_stop(seq, boardtype, state);
+		try {
+			response.sendRedirect("/admin/boardselect?boardtype="+boardtype);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else{
-			System.out.println(seq+boardtype+state);
-			admin_service.board_stop(seq, boardtype, state);
-		}
-		return "admin/board_management";
 	}
 	
 	@RequestMapping("declaration")

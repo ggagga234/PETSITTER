@@ -1,53 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="petsitter">
+<mapper namespace="Petsitter">
 
-<select id="petselect" resultType="kh.pet.dto.PetDto">
-	select * from mypet
-</select>
+	<insert id="insert">
+		insert into petsitter
+		(ps_id,ps_age,ps_gender,ps_resident_type,ps_address1,ps_address2,
+		ps_service,ps_drive,ps_license,ps_license_img,ps_img,ps_myself)
+		values(#{ps_id},#{ps_age},#{ps_gender},#{ps_resident_type},#{ps_address1},#{ps_address2},#{ps_service},#{ps_drive},#{ps_license},#{ps_license_img,
+		jdbcType=VARCHAR},#{ps_img},#{ps_myself})
+	</insert>
 
-<insert id="memboardinsert">
-	insert into mem_board values(mb_seq.nextval,#{mb_title,jdbcType=VARCHAR},#{mb_writer,jdbcType=VARCHAR},#{mb_unique},sysdate,#{mb_pet_name},#{mb_service},#{mb_startday},#{mb_endday},#{mb_time},#{mb_point,jdbcType=VARCHAR},#{mb_petphoto,jdbcType=VARCHAR},default,default)
-</insert>
+	<select id="selectById" resultType="kh.pet.dto.PetsitterDTO">
+		select * from petsitter where ps_id=#{ps_id}
+	</select>
+	
+	<update id="update_star">
+		update petsitter set ps_star = ps_star + #{rw_star} where ps_id = #{rw_petsitter_id}
+	</update>
 
-<!-- mb_seq -> 아이디값으로 수정 -->
-<select id="redlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=#{mb_seq}
-</select>
-
-<select id="petphoto" resultType="String">
-	select pet_photo from mypet where pet_name=#{mb_pet_name}
-</select> 
-
-<select id="gettime" resultType="String">
-	select time_times from reservation_time where time_seq=#{time}
-</select>
-
-<select id="getpettype" resultType="String">
-	select pet_type from mypet where pet_name=#{value}
-</select>
-
-<select id="modlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=#{mb_seq}
-</select>
-
-<update id="Memboardupdate">
-	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name,jdbcType=VARCHAR},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=${mb_seq}
-</update>
-
-<select id="getArticleCount" resultType="int">
- select count(*) from mem_board
-</select>
-
-<select id="mb_boardList" resultType="kh.pet.dto.MemboardDto">
-	select * from (select mem_board.*,row_number()over (order by mb_seq desc) rnum from mem_board) where rnum between ${start} and ${end}
-</select>
-
-<delete id="deleteboard">
-	delete mem_board where mb_seq=#{value}
-</delete>
-
-<select id="seqid" resultType="int">
-	select max(mb_seq) from mem_board where mb_writer=#{value}
-</select>
 </mapper>

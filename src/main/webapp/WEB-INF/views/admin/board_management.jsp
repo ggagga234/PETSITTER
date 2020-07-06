@@ -140,7 +140,7 @@
 										<div class="col-4 col-lg">${i.mb_date}</div>
 										<div class="col-4 col-lg">
 											<c:choose>
-												<c:when test="${i.mb_restatus eq 'no'}">통상</c:when>
+												<c:when test="${i.mb_boardstatus eq 'no'}">통상</c:when>
 												<c:otherwise>정지</c:otherwise>
 											</c:choose>
 										</div>

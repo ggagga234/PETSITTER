@@ -38,7 +38,7 @@ public class HomeController {
 	
 	@RequestMapping("tmp")
 	public String tmp() {
-		return "home2";
+		return "petsitter_board/home";
 	}
 	
 	@RequestMapping("adminindex")
@@ -49,5 +49,16 @@ public class HomeController {
 	@RequestMapping("community")
 	public String community() {
 		return "/";
+	}
+	
+	@RequestMapping("/point/charge")
+	public String charge() {
+		return "/petsitter_board/point/charge";
+	}
+	
+	@RequestMapping("/point/payment")
+	public String payment(int mem_point,Model model) {
+		model.addAttribute("point",mem_point);
+		return "/petsitter_board/point/payment";
 	}
 }

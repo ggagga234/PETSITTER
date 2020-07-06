@@ -100,59 +100,36 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <nav class="navbar navbar-light ">
-                                            <a class="navbar-brand">예약 내용</a>
-                                            <form class="form-inline d-none d-sm-block">
-                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                                            </form>
+                                            <form action="/admin/reservationtype">
+											<input type="text" value="${i.mb_seq}" name=seq style="display: none">
+												<select name="state"
+													class="btn btn-info dropdown-toggle btn-sm">	
+													<option value="ps">펫 시터</option>
+													<option value="mb">일반 회원</option>
+												</select>
+												<button class="btn btn-outline-primary my-2 my-sm-0 btn-sm">선택</button>
+											</form>
                                         </nav>
                                     </div>
                                     <div class="col-12">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <th>신청자 아이디</th>
-                                                <th>회원 종류</th>
-                                                <th>예약 날짜</th>
-                                                <th>예약 내용</th>
-                                                <th>수락/거절</th>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    바보
-                                                </td>
-                                                <td>
-                                                    시터
-                                                </td>
-                                                <td>
-                                                    20.11.30
-                                                </td>
-                                                <td>
-                                                    신청서 내용
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary btn-sm">수락</button>
-                                                    <button class="btn btn-outline-primary btn-sm">거절</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    아무개
-                                                </td>
-                                                <td>
-                                                    일반
-                                                </td>
-                                                <td>
-                                                    20.12.11
-                                                </td>
-                                                <td>
-                                                    신청서 내용
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary btn-sm">수락</button>
-                                                    <button class="btn btn-outline-primary btn-sm">거절</button>
-                                                </td>
-                                            </tr>
-                                        </table>
+	                                    <div class="row">
+	                                    	<div class="col-3">아이디</div>
+	                                    	<div class="col-3">예약 날짜</div>
+	                                    	<div class="col-3">예약 내용</div>
+	                                    	<div class="col-3">수락/거절</div>
+	                                    </div>
+                                      	<hr style="width: 100%;">
+                                      	<c:forEach var="i" items="reservation">
+	                                     	<div class="row">
+	                                     		<div class="col-3"></div>
+	                                     		<div class="col-3"></div>
+	                                     		<div class="col-3"></div>
+	                                     		<div class="col-3">
+	                                     			<input type="button" value="수락" class="ok">
+	                                     			<input type="button" value="거절" class="cancle" >
+	                                     		</div>
+	                                     	</div>
+                                      	</c:forEach>
                                     </div>
                                 </div>
                             </div>

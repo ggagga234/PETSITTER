@@ -40,6 +40,7 @@ public class Mb_boardController {
 		
 		return "redirect:redlist";
 	}
+	
 	// 등록뷰 보드seq값추가해줘야함	
 	@RequestMapping("redlist")
 	public String redlist(Model m,MemboardDto mdto) {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Review">
+	<insert id="insert">
+		insert into review (rw_seq,rw_writer,rw_contents,rw_star,rw_petsitter_id,rw_parent_seq) values (rw_seq.nextval, #{rw_writer},#{rw_contents},#{rw_star},#{rw_petsitter_id},#{rw_parent_seq})
+	</insert>
+	
+	<select id="selectCnt" resultType="int">
+		select count(*) from review where rw_parent_seq=#{rw_parent_seq}
+	</select>
+	
+	<select id="selectByParentSeq" resultType="kh.pet.dto.ReviewDTO">
+		select * from review where rw_parent_seq=#{rw_parent_seq}
+	</select>
+	
+	<delete id="delete">
+		delete from review where rw_parent_seq = #{rw_parent_seq} and rw_seq = #{rw_seq}
+	</delete>
+
+
+</mapper>

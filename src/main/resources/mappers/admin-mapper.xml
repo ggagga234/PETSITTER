@@ -3,7 +3,12 @@
 <mapper namespace="Admin">
 	
 	<update id="board_state">
-			update mem_board set mb_boardstatus = #{state} where mb_seq = ${seq}
+	update
+	<choose>
+		<when test="${boardType}"></when>
+		
+	</choose>
+			 mem_board set mb_boardstatus = #{state} where mb_seq = ${seq}
 	</update>
 
 </mapper>

@@ -16,9 +16,6 @@
 		<property name="initialSize" value="30"></property>
 	</bean>
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-
-		
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
@@ -27,5 +24,9 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mapperLocations" value="classpath:/mappers/*-mapper.xml"></property>
 	</bean>
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+		
+	
 	
 </beans>

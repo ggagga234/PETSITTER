@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+
+	<insert id="insert">
+		insert into petsitter_board
+		(psb_seq,psb_title,psb_writer,psb_contents,psb_thumb,psb_service,psb_start_day,psb_end_day,psb_time,psb_petType)
+		values (#{psb_seq},#{psb_title},#{psb_writer},#{psb_contents},#{psb_thumb},#{psb_service},#{psb_start_day},#{psb_end_day},#{psb_time},#{psb_petType})
+	</insert>
+	
+	<select id="selectBoard" resultType="kh.pet.dto.TotboardDTO">
+		select psb.psb_seq psb_seq, psb.psb_title psb_title, psb.psb_writer psb_writer, psb.psb_thumb psb_thumb, ps.ps_age ps_age, ps.ps_gender ps_gender, ps.ps_address1 ps_address1, psb.psb_petType psb_petType, ps.ps_resident_type ps_resident_type, psb.psb_service psb_service, psb.psb_contents psb_contents, psb.psb_start_day psb_start_day, psb.psb_end_day psb_end_day, psb.psb_time psb_time from petsitter_board psb, petsitter ps where ps.ps_id=#{writer} and psb.psb_seq=#{seq}
+	</select>
+	
+	<select id="selectNextSeq" resultType="String">
+		select psb_seq.nextval from dual
+	</select>
+	
+	<select id="selectBySeq" resultType="kh.pet.dto.PetsitterboardDTO">
+		select * from petsitter_board where psb_seq=#{psb_seq}
+	</select>
+	
+	<select id="selectAll" resultType="kh.pet.dto.PetsitterboardDTO">
+		select * from petsitter_board order by psb_seq desc
+	</select>
+	
+	<select id="selectCnt" resultType="int">
+		select count(*) from petsitter_board
+	</select>
+	
+	<select id="selectByPage" resultType="kh.pet.dto.PetsitterboardDTO">
+		select * from (select petsitter_board.*, row_number () over (order by psb_seq desc) rnum from petsitter_board)where rnum between #{start} and #{end}
+	</select>
+	
+</mapper>
