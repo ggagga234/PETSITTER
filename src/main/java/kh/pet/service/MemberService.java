@@ -56,7 +56,7 @@ public class MemberService {
 
 	
 
-	public void signup(MemberDTO mdto) throws Exception{ //회원가입.
+	public void signup(MemberDTO mdto) throws Exception{ //�쉶�썝媛��엯.
 		String key = new Tempkey().getKey(20, false);		
 		System.out.println("key: "+key);
 		mdto.setMem_authkey(key);
@@ -64,25 +64,25 @@ public class MemberService {
 		mdao.signup(mdto);
 		String id = mdto.getMem_id();
 		
-		//메일 전송
+		//硫붿씪 �쟾�넚
         MailHandler sendMail = new MailHandler(mailSender);
-        sendMail.setSubject("뭐하냥도와주개 이메일 인증");
+        sendMail.setSubject("萸먰븯�깷�룄��二쇨컻 �씠硫붿씪 �씤利�");
         sendMail.setText(
                 new StringBuffer()
                 .append(id)
-                .append("님, 가입을 환영합니다. 아래 링크를 누르면 인증이 완료됩니다.")
+                .append("�떂, 媛��엯�쓣 �솚�쁺�빀�땲�떎. �븘�옒 留곹겕瑜� �늻瑜대㈃ �씤利앹씠 �셿猷뚮맗�땲�떎.")
                 .append("<br>")
-                .append("(혹시 잘못 전달되었다면, 이 이메일을 무시하셔도 됩니다)")
+                .append("(�샊�떆 �옒紐� �쟾�떖�릺�뿀�떎硫�, �씠 �씠硫붿씪�쓣 臾댁떆�븯�뀛�룄 �맗�땲�떎)")
                 .append("<br>")
                 .append("<br>")
-                .append("<a href='http://192.168.60.42:8099/member/emailConfirm?authKey=")
+                .append("<a href='http://192.168.60.25:8080/member/emailConfirm?authKey=")
                 .append(key)
                 .append("&userid=")
                 .append(id)
-                .append("' target='_blank'>이메일 인증 확인</a>")
+                .append("' target='_blank'>�씠硫붿씪 �씤利� �솗�씤</a>")
                 .toString());
         
-        sendMail.setFrom("whatcathelpdog@gmail.com", "뭐하냥도와주개");
+        sendMail.setFrom("whatcathelpdog@gmail.com", "萸먰븯�깷�룄��二쇨컻");
         sendMail.setTo(mdto.getMem_email());
         sendMail.send();
 
@@ -103,7 +103,7 @@ public class MemberService {
 		
 	}
 	
-	public int verify(String id) { //이메일 인증확인
+	public int verify(String id) { //�씠硫붿씪 �씤利앺솗�씤
 		
 		int result = mdao.verify(id);
 		return result;
@@ -122,49 +122,49 @@ public class MemberService {
 		
 	}
 	
-	public String findID(String email) { //ID찾기
+	public String findID(String email) { //ID李얘린
 				
 		return mdao.findID(email);
 		
 	}
 	
-	public int findPw(Map<String, String> map) { //일치 비번확인
+	public int findPw(Map<String, String> map) { //�씪移� 鍮꾨쾲�솗�씤
 		
 		return mdao.findPw(map);		
 		
 	}
 	
-	public int replacepw(String id, String email) throws Exception { //비밀번호 재설정
+	public int replacepw(String id, String email) throws Exception { //鍮꾨�踰덊샇 �옱�꽕�젙
 				
 		String key = new Tempkey().getKey(8, false);		
-		System.out.println("재설정 key: "+key);
+		System.out.println("�옱�꽕�젙 key: "+key);
 				
-		//메일 전송
+		//硫붿씪 �쟾�넚
         MailHandler sendMail = new MailHandler(mailSender);
-        sendMail.setSubject("[뭐하냥도와주개] 임시 비밀 번호 안내드립니다. ");
+        sendMail.setSubject("[萸먰븯�깷�룄��二쇨컻] �엫�떆 鍮꾨� 踰덊샇 �븞�궡�뱶由쎈땲�떎. ");
         sendMail.setText(
                 new StringBuffer()
                 .append(id)
-                .append("님의 임시 비밀번호는")
+                .append("�떂�쓽 �엫�떆 鍮꾨�踰덊샇�뒗")
                 .append("&nbsp;<strong>") 
                 .append(key)
                 .append("</strong>&nbsp;")
-                .append("입니다.") 
+                .append("�엯�땲�떎.") 
                 .append("<br>")
-                .append("(혹시 잘못 전달되었다면, 이 이메일은 무시하셔도 됩니다)")
+                .append("(�샊�떆 �옒紐� �쟾�떖�릺�뿀�떎硫�, �씠 �씠硫붿씪�� 臾댁떆�븯�뀛�룄 �맗�땲�떎)")
                 .append("<br>")
-                .append("임시 비밀번호로 로그인 후, 마이페이지에서 원하는 비밀번호로 수정해주세요.")
+                .append("�엫�떆 鍮꾨�踰덊샇濡� 濡쒓렇�씤 �썑, 留덉씠�럹�씠吏��뿉�꽌 �썝�븯�뒗 鍮꾨�踰덊샇濡� �닔�젙�빐二쇱꽭�슂.")
                 .append("<br>")
                 .append("<a href='http://192.168.60.13/'")
-                .append("' target='_blank'>뭐하냥 도와주개</a>")
+                .append("' target='_blank'>萸먰븯�깷 �룄��二쇨컻</a>")
                 .toString());
         
-        sendMail.setFrom("whatcathelpdog@gmail.com", "뭐하냥도와주개");
+        sendMail.setFrom("whatcathelpdog@gmail.com", "萸먰븯�깷�룄��二쇨컻");
         sendMail.setTo(email);
         sendMail.send();
 		
 				
-		String pw = this.getSHA512(key); //암호화
+		String pw = this.getSHA512(key); //�븫�샇�솕
 		
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
