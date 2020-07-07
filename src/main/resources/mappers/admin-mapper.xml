@@ -3,12 +3,14 @@
 <mapper namespace="Admin">
 	
 	<update id="board_state">
-	update
-	<choose>
-		<when test="${boardType}"></when>
-		
-	</choose>
-			 mem_board set mb_boardstatus = #{state} where mb_seq = ${seq}
+		update ${boardType} set mb_boardstatus = #{state} where mb_seq = ${seq}
 	</update>
-
+	
+	<select id="petsitter" resultType="kh.pet.dto.PetsitterDTO">
+		select p.ps_id, p.ps_age from member m, petsitter p where mem_id=ps_id and m.mem_type=1
+	</select>
+	
+	<update id="petaccept">
+		update member set mem_type = #{mem_type}
+	</update>
 </mapper>

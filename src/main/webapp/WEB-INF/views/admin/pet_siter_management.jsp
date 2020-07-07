@@ -108,51 +108,23 @@
                                         </nav>
                                     </div>
                                     <div class="col-12">
-                                        <table style="width: 100%">
-                                            <tr>
-                                                <th>회원 명</th>
-                                                <th>회원 종류</th>
-                                                <th>가입 날짜</th>
-                                                <th>신청서 내용</th>
-                                                <th>수락/거절</th>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    바보
-                                                </td>
-                                                <td>
-                                                    시터
-                                                </td>
-                                                <td>
-                                                    20.11.30
-                                                </td>
-                                                <td>
-                                                    신청서 내용
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary btn-sm">수락</button>
-                                                    <button class="btn btn-outline-primary btn-sm">거절</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    아무개
-                                                </td>
-                                                <td>
-                                                    일반
-                                                </td>
-                                                <td>
-                                                    20.12.11
-                                                </td>
-                                                <td>
-                                                    신청서 내용
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary btn-sm">수락</button>
-                                                    <button class="btn btn-outline-primary btn-sm">거절</button>
-                                                </td>
-                                            </tr>
-                                        </table>
+	                                    <div class="row">
+	                                    	<div class= col-3>회원아이디</div>
+	                                    	<div class= col-3>회원나이</div>
+	                                    	<div class= col-3>신청서내용</div>
+	                                    	<div class= col-3>수락/거절</div>      	    
+	                                    </div>
+	                                    <c:forEach var="i" items="${petsitter}">
+		                                    <div class="col-12">
+		                                    	<div class= col-3>${i.ps_id}</div>
+		                                    	<div class= col-3>${i.ps_age}</div>
+		                                    	<div class= col-3><a href="#">내용 보기</a></div>
+		                                    	<div class= col-3>
+		                                    		<input type="button" value="수락" class="accept" >
+		                                    		<input type="button" value="거절" class="cencel" >
+		                                    	</div> 
+		                                    </div>
+	                                    </c:forEach>
                                     </div>
                                 </div>
                             </div>

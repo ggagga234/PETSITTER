@@ -109,7 +109,7 @@
 										<form action="/admin/boardselect">
 											<select name="boardtype" class="btn btn-info dropdown-toggle">
 												<option value="free">자유게시판</option>
-												<option value="mb_board">반려인게시판</option>
+												<option value="mem_board">반려인게시판</option>
 												<option value="aaa">구직</option>
 											</select>
 											<button class="btn btn-outline-primary my-2 my-sm-0">검색</button>
