@@ -55,11 +55,32 @@
 
           </div>
           <div class="col-lg-3 ml-auto">
-          <c:if test="${sessionScope.loginInfo.mem_type != 2 }">
+          <c:if test="${sessionScope.loginInfo.mem_type == '2'}">
 			<div class="mb-5">
-	            <a href="/board/output" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block"> 
-					글등록하기  <i class='bx bx-message-square-edit'></i>
-				</a>
+	            <button id="register_btn" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block"> 
+					글등록하기  <i class='bx bx-message-square-edit'></i></button>
+				<script>
+					$(function(){
+						$("#register_btn").on("click",function(){
+							console.log('${sessionScope.loginInfo.mem_id}');
+							$.ajax({
+								url : "/board/selectCnt?psb_writer=${sessionScope.loginInfo.mem_id}",
+								type:"POST",
+								success : function(result){
+									if(result>=1){
+										alert("등록된 글이 존재합니다.");
+									} else {
+										location.href="/board/output";
+									}
+								},
+								error:function(){
+									alert("selectCnt err");
+								}
+								
+							});
+						});
+					})
+				</script>
              </div>
           </c:if>
 			

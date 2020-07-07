@@ -151,9 +151,11 @@ ul>li, input {
 		  		var time_list = "${tot_Info.psb_time}";
 	  			var time_listarr = time_list.split(",");
 		  		$("input[name='psb_time']").each(function(index,item){
+		  			$(item).prop('checked',true);
+		  			$("input[name='psb_time']").prop('disabled',true);
 		  			for(var i=0;i<time_listarr.length;i++){
 		  				if(time_listarr[i]!=$(item).val()){
-		  					$(this).prop('disabled',true);
+		  					$(this).prop('checked',false);
 		  				}
 		  			}
 		  		});
@@ -450,7 +452,7 @@ ul>li, input {
                     		$("#submit").on("click",function(){
                     			var form ={
                     					rw_contents:$("#rw_contents").val(),
-                    					rw_writer: "아이디",
+                    					rw_writer: "${ sessionScope.loginInfo.mem_id}",
                     					rw_star:$("#rw_star").val(),
                     					rw_petsitter_id:"${tot_Info.psb_writer}",
                     					rw_parent_seq: "${tot_Info.psb_seq}"
@@ -551,22 +553,18 @@ ul>li, input {
 						</div>
 					</div>
 					<hr class="mb-4">
-					<h3 class="h5 text-black mb-3" style="text-align: center">
-						펫시터 위치<i class="icofont-location-pin"></i>
-					</h3>
+
 					
 					<div class="mb-5">
 						<c:choose>
-							<c:when test="${sessionScope.loginInfo.id == tot_Info.psb_writer}">
+							<c:when test="${sessionScope.loginInfo.mem_id == tot_Info.psb_writer}">
 								<button id="update" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">수정하기</button>
 								<button id="delete" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">삭제하기</button>
 								<button id="tolist" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">목록으로</button>
 							</c:when>
 							<c:otherwise>
-								<button id="update" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">수정하기</button>
-								<button id="delete" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">삭제하기</button>
-								<button class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block" type="submit">등록하기</button>
 								<button id="tolist" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">목록으로</button>
+								<button class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block" type="submit">등록하기</button>
 							</c:otherwise>
 						</c:choose>
 					</div>

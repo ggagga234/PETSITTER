@@ -15,7 +15,7 @@
 <body>
  	<script type="text/javascript">
  	BootPay.request({
- 		price: '${point}', //실제 결제되는 가격
+ 		price: '1000', //실제 결제되는 가격
  		application_id: "5eea49124f74b4002c76e987",
  		name: '${Math.floor(point/100)}포인트 충전', //결제창에서 보여질 이름
  		pg: '',
@@ -26,7 +26,7 @@
  				item_name: '나는 아이템', //상품명
  				qty: 1, //수량
  				unique: '123', //해당 상품을 구분짓는 primary key
- 				price: '${point}', //상품 단가
+ 				price:1000, //상품 단가
  				cat1: 'TOP', // 대표 상품의 카테고리 상, 50글자 이내
  				cat2: '티셔츠', // 대표 상품의 카테고리 중, 50글자 이내
  				cat3: '라운드 티', // 대표상품의 카테고리 하, 50글자 이내

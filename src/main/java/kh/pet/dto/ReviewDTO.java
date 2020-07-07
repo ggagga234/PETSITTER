@@ -9,13 +9,13 @@ public class ReviewDTO {
 	private String rw_writer;
 	private String rw_date;
 	private String rw_contents;
-	private int rw_star;
+	private float rw_star;
 	private String rw_petsitter_id;
 	private String rw_parent_seq;
 	
 	public ReviewDTO() {}
 
-	public ReviewDTO(int rw_seq, String rw_writer, String rw_date, String rw_contents, int rw_star,
+	public ReviewDTO(int rw_seq, String rw_writer, String rw_date, String rw_contents, float rw_star,
 			String rw_petsitter_id, String rw_parent_seq) {
 		super();
 		this.rw_seq = rw_seq;
@@ -59,11 +59,11 @@ public class ReviewDTO {
 		this.rw_contents = rw_contents;
 	}
 
-	public int getRw_star() {
+	public float getRw_star() {
 		return rw_star;
 	}
 
-	public void setRw_star(int rw_star) {
+	public void setRw_star(float rw_star) {
 		this.rw_star = rw_star;
 	}
 

@@ -1,14 +1,13 @@
 package kh.pet.dto;
 
 public class PetsitterDTO {
-
 	private String ps_id;
 	private Integer ps_age;
 	private String ps_gender;
 	private String ps_resident_type;
 	private String ps_address1;
 	private String ps_address2;
-	private Integer ps_star;
+	private Float ps_star;
 	private Integer ps_warning;
 	private String ps_service;
 	private String ps_drive;
@@ -16,11 +15,11 @@ public class PetsitterDTO {
 	private String ps_license_img;
 	private String ps_img;	
 	private String ps_myself;
-
+	
 	public PetsitterDTO() {}
 
 	public PetsitterDTO(String ps_id, Integer ps_age, String ps_gender, String ps_resident_type, String ps_address1,
-			String ps_address2, Integer ps_star, Integer ps_warning, String ps_service, String ps_drive,
+			String ps_address2, Float ps_star, Integer ps_warning, String ps_service, String ps_drive,
 			String ps_license, String ps_license_img, String ps_img, String ps_myself) {
 		super();
 		this.ps_id = ps_id;
@@ -87,11 +86,11 @@ public class PetsitterDTO {
 		this.ps_address2 = ps_address2;
 	}
 
-	public Integer getPs_star() {
+	public Float getPs_star() {
 		return ps_star;
 	}
 
-	public void setPs_star(Integer ps_star) {
+	public void setPs_star(Float ps_star) {
 		this.ps_star = ps_star;
 	}
 
@@ -150,5 +149,5 @@ public class PetsitterDTO {
 	public void setPs_myself(String ps_myself) {
 		this.ps_myself = ps_myself;
 	}
-
+	
 }

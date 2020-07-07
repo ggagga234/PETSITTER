@@ -139,28 +139,7 @@
 		          readURL(this);
 		      });
 			  
-			  
 			$("#register_frm").bind('submit',function(){
-				$("#ps_id").on("keyup",function(){
-					var ps_id = $("#ps_id").val();
-					$.ajax({
-						url : "/member/isExistId",
-						type : "POST",
-						data : {ps_id : ps_id},
-						dataType : "JSON",
-						success : function(resp){
-							if(resp == true){
-							//	$("#duplecheckid").html("사용가능한 아이디입니다.");
-								$("#ps_id").css("color","green");
-								check_id = true;
-							} else {
-								$("#ps_id").val("회원가입 후 지원해주세요.");
-								$("#ps_id").css("color","red");
-								check_id=false;
-							}
-						}
-					});
-				});
 				
 				if($("input[name='ps_gender']:checked").val()==null){
 					alert("성별을 선택해주세요.");
@@ -191,7 +170,6 @@
 						alert("자격증 이미지 파일을 첨부해주세요.");
 						return false;
 				}
-				
 			});
 		})
 	</script>
@@ -209,7 +187,7 @@
 								<h2 class="mb-3"> 펫시터 지원서 </h2>
 								<div class="mb-3">
 									<label for="ps_id">아이디</label>
-									<input type="text" class="form-control" id="ps_id" name="ps_id" placeholder="아이디를 입력해주세요" style="width:200px;" required>
+									<input type="text" class="form-control" id="ps_id" name="ps_id" placeholder="아이디를 입력해주세요" value=${sessionScope.loginInfo.mem_id } readonly required>
 									<span id="idcheck"></span>
 								</div>
 								<div class="mb-3">
