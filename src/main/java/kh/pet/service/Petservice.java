@@ -63,6 +63,10 @@ public class Petservice {
 		return dao.addselec(id);
 	}
 	
+	public int applyup(MemboardDto mbdto) {
+		return dao.applyup(mbdto);
+	}
+	
 	public List<MemboardDto> mb_boardList(int cpage){
 		int start =  cpage*Mb_Configuration.recordCountPerPage-(Mb_Configuration.recordCountPerPage-1);
 		int end = start + (Mb_Configuration.recordCountPerPage-1);
