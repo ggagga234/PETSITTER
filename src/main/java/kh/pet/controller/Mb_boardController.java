@@ -56,8 +56,7 @@ public class Mb_boardController {
 		String add = service.addselec(mdto.getMem_id());
 		System.out.println(mdto.getMem_id());
 		String mb_seq = service.seqid(mdto.getMem_id());
-		System.out.println(mb_seq);
-		MemboardDto mlist = service.redlist(mb_seq);
+		MemboardDto mlist = service.redlist(mbdto.getMb_seq());
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");
@@ -83,7 +82,7 @@ public class Mb_boardController {
 		}
 		
 		System.out.println(pettype);
-		
+		System.out.println("seq : "+mlist.getMb_seq());
 		m.addAttribute("times", times);
 		m.addAttribute("mlist", mlist);
 		m.addAttribute("add", add);
@@ -132,7 +131,7 @@ public class Mb_boardController {
 	}
 
 	@RequestMapping("modified_con")
-	public String modified_con(MemboardDto mbdto) {
+	public String modified_con(MemboardDto mbdto,Model m) {
 		System.out.println(mbdto.getMb_pet_name());
 		System.out.println(mbdto.getMb_startday());
 		System.out.println(mbdto.getMb_endday());
@@ -141,6 +140,7 @@ public class Mb_boardController {
 		System.out.println(mbdto.getMb_service());
 
 		service.Memboardupdate(mbdto);	
+		m.addAttribute("mb_seq", mbdto.getMb_seq());
 		return "redirect:redlist";
 	}
 

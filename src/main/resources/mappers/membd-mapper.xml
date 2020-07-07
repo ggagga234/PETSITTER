@@ -44,7 +44,7 @@
 </select>
 
 <delete id="deleteboard">
-	delete mem_board where mb_seq=#{value}
+	delete mem_board where mb_seq=#{mb_seq}
 </delete>
 
 <select id="seqid" resultType="String">

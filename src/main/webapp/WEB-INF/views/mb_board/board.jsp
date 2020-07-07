@@ -576,7 +576,6 @@
             var duration = moment.duration(endcon.diff(startcon)).asDays();
 			           
 			var point = 0;
-			
 			<c:forEach var = "j" items="${services}">
 				$("#"+"${j}").css("color","red");
 			</c:forEach>	
@@ -601,7 +600,7 @@
 				}
 				</c:forEach>
 			</c:forEach>
-			$(".price span").html(point*duration);
+			$(".price span").html(point*(duration+1));
 		})
 	</script>
 </body>

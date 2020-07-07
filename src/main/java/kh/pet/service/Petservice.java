@@ -51,6 +51,7 @@ public class Petservice {
 	}
 	
 	public int deleteboard(MemboardDto mdto) {
+		System.out.println("삭제 페이지 번호 : "+mdto.getMb_seq());
 		return dao.deleteboard(mdto);
 	}
 	
