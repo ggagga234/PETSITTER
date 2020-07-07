@@ -27,4 +27,8 @@ public class AdminService {
 	public List<PetsitterDTO> petsitter(){
 		return dao.petsitter();
 	}
+	
+	public int petaccept(String id) {
+		return dao.petaccept(id);
+	}
 }

@@ -24,4 +24,7 @@ public class AdminDAO {
 		return mybatis.selectList("Admin.petsitter");
 	}
 	
+	public int petaccept(String id) {
+		return mybatis.update("Admin.petaccept");
+	}
 }
