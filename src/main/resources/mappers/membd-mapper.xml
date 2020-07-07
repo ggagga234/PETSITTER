@@ -7,12 +7,12 @@
 </select>
 
 <insert id="memboardinsert">
-	insert into mem_board values(mb_seq.nextval,#{mb_title,jdbcType=VARCHAR},#{mb_writer,jdbcType=VARCHAR},#{mb_unique},sysdate,#{mb_pet_name},#{mb_service},#{mb_startday},#{mb_endday},#{mb_time},#{mb_point,jdbcType=VARCHAR},#{mb_petphoto,jdbcType=VARCHAR},default,default)
+	insert into mem_board values('mb_'||mb_seq.nextval,#{mb_title,jdbcType=VARCHAR},#{mb_writer,jdbcType=VARCHAR},#{mb_unique},sysdate,#{mb_pet_name},#{mb_service},#{mb_startday},#{mb_endday},#{mb_time},#{mb_point,jdbcType=VARCHAR},#{mb_petphoto,jdbcType=VARCHAR},default,default)
 </insert>
 
 <!-- mb_seq -> 아이디값으로 수정 -->
 <select id="redlist" resultType="kh.pet.dto.MemboardDto">
-	select * from mem_board where mb_seq=#{mb_seq}
+	select * from mem_board where mb_seq=#{seq}
 </select>
 
 <select id="petphoto" resultType="String">
@@ -32,7 +32,7 @@
 </select>
 
 <update id="Memboardupdate">
-	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name,jdbcType=VARCHAR},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=${mb_seq}
+	update mem_board set mb_title=#{mb_title,jdbcType=VARCHAR},mb_date=sysdate,mb_pet_name=#{mb_pet_name,jdbcType=VARCHAR},mb_service=#{mb_service},mb_startday=#{mb_startday},mb_endday=#{mb_endday},mb_time=#{mb_time},mb_unique=#{mb_unique} where mb_seq=#{mb_seq}
 </update>
 
 <select id="getArticleCount" resultType="int">
@@ -44,10 +44,14 @@
 </select>
 
 <delete id="deleteboard">
-	delete mem_board where mb_seq=#{value}
+	delete mem_board where mb_seq=#{mb_seq}
 </delete>
 
-<select id="seqid" resultType="int">
-	select max(mb_seq) from mem_board where mb_writer=#{value}
+<select id="seqid" resultType="String">
+	select max(mb_seq) from mem_board where mb_writer=#{id}
+</select>
+
+<select id="addselec" resultType="String">
+	select mem_address1 from member where mem_id=#{value}
 </select>
 </mapper>

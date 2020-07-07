@@ -23,8 +23,8 @@ public class PetDao {
 		return mybatis.insert("membd.memboardinsert", mdto);
 	}
 	
-	public MemboardDto redlist(int mb_seq){
-		return mybatis.selectOne("membd.redlist",mb_seq);
+	public MemboardDto redlist(String seq){
+		return mybatis.selectOne("membd.redlist",seq);
 	}
 	
 	public String petphoto(String mb_pet_name) {
@@ -60,7 +60,12 @@ public class PetDao {
 		return mybatis.delete("membd.deleteboard", mdto);
 	}
 	
-	public int seqid(String id) {
+	public String seqid(String id) {
+		System.out.println(id);
 		return mybatis.selectOne("membd.seqid",id);
+	}
+	
+	public String addselec(String id) {
+		return mybatis.selectOne("membd.addselec",id);
 	}
 }
