@@ -55,7 +55,7 @@ public class Petservice {
 		return dao.deleteboard(mdto);
 	}
 	
-	public String seqid(String id) {
+	public List<MemboardDto> seqid(String id) {
 		return dao.seqid(id);
 	}
 	
