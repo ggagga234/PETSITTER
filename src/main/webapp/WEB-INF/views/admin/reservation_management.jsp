@@ -122,7 +122,7 @@
 										<div class="col">포인트</div>
 										<div class="col">수락/거절</div>
 									</div>
-									<hr style="width: 100%;">
+									<hr style="width: 100%; margin: 15px;">
 									<c:forEach var="i" items="${list}">
 										<div class="row">
 											<div class="col">${i.mb_seq}</div>
@@ -134,6 +134,7 @@
 												<input type="button" value="거절" class="cancle">
 											</div>
 										</div>
+										<hr style="width: 100%; margin: 15px;">
 									</c:forEach>
 								</div>
 							</div>
