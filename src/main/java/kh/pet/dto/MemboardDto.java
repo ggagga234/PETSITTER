@@ -17,6 +17,7 @@ public class MemboardDto {
 	private String mb_petphoto;
 	private String mb_boardstatus;
 	private String mb_restatus;
+	private String mb_booker;
 	private String[] photo;
 	
 	public MemboardDto() {
@@ -26,7 +27,7 @@ public class MemboardDto {
 
 	public MemboardDto(String mb_seq, String mb_title, String mb_writer, Timestamp mb_date, String mb_pet_name,
 			String mb_service, String mb_startday, String mb_endday, String mb_time, String mb_unique, String mb_point,
-			String mb_petphoto, String mb_boardstatus, String mb_restatus, String[] photo) {
+			String mb_petphoto, String mb_boardstatus, String mb_restatus, String mb_booker, String[] photo) {
 		super();
 		this.mb_seq = mb_seq;
 		this.mb_title = mb_title;
@@ -42,6 +43,7 @@ public class MemboardDto {
 		this.mb_petphoto = mb_petphoto;
 		this.mb_boardstatus = mb_boardstatus;
 		this.mb_restatus = mb_restatus;
+		this.mb_booker = mb_booker;
 		this.photo = photo;
 	}
 
@@ -157,6 +159,14 @@ public class MemboardDto {
 		this.mb_restatus = mb_restatus;
 	}
 
+	public String getMb_booker() {
+		return mb_booker;
+	}
+
+	public void setMb_booker(String mb_booker) {
+		this.mb_booker = mb_booker;
+	}
+
 	public String[] getPhoto() {
 		return photo;
 	}
@@ -164,6 +174,6 @@ public class MemboardDto {
 	public void setPhoto(String[] photo) {
 		this.photo = photo;
 	}
-	
+
 	
 }

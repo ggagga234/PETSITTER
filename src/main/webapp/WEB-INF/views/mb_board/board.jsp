@@ -37,6 +37,7 @@
 
 <!-- icon -->
 <link href="/resources/mb/icofont/icofont.min.css" rel="stylesheet">
+
 <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css'
 	rel='stylesheet'>
 <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
@@ -282,120 +283,7 @@
 										</div>
 									</div>
 									<div class="custom-pagination">
-										<button class="btn btn-primary text-white save">신청하기</button>
-									</div>
-
-									<div data-brackets-id='33'
-										style="width: 100%; border-radius: 8px; border: 1px solid #DFE3EA; box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.07); padding: 15px 15px; margin-top: 38px; margin-bottom: 38px">
-										<div data-brackets-id='34'
-											style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-											<p data-brackets-id='35'
-												style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; line-height: 25px; color: #81DAD6">이용
-												요금</p>
-											<div data-brackets-id='36'
-												style="display: flex; align-items: center; flex-direction: row">
-												<div data-brackets-id='37'
-													style="display: flex; flex-direction: row; align-items: center; margin-right: 8px">
-
-													<p data-brackets-id='38'
-														style="font-size: 13px; line-height: 18px; color: #81DAD6">2시간당</p>
-
-													<div data-brackets-id='39'
-														style="width: 1px; height: 15px; background-color: #ECEDF0; margin-left: 5px; margin-right: 5px">
-													</div>
-
-													<p data-brackets-id='40'
-														style="font-size: 13px; line-height: 18px; color: #81DAD6">AM,PM</p>
-												</div>
-											</div>
-										</div>
-										<div data-brackets-id='43'
-											style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 31px; margin-bottom: 31px">
-											<div data-brackets-id='44'
-												style="display: flex; flex-direction: row; align-items: center; height: 24px">
-												아이콘자리
-												<p data-brackets-id='46'
-													style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">소형견</p>
-												<p data-brackets-id='47'
-													style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">7키로
-													미만</p>
-											</div>
-											<div data-brackets-id='48'
-												style="display: flex; flex-direction: row">
-												<div data-brackets-id='49'
-													style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
-													<p data-brackets-id='50'
-														style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">50포인트</p>
-												</div>
-												<div data-brackets-id='51'
-													style="display: flex; flex-direction: column; align-items: center; width: 62px">
-													<p data-brackets-id='52'
-														style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">150포인트</p>
-												</div>
-											</div>
-										</div>
-										<div data-brackets-id='53'
-											style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 14px; margin-bottom: 31px">
-											<div data-brackets-id='54'
-												style="display: flex; flex-direction: row; align-items: center; height: 24px">
-												아이콘자리
-												<p data-brackets-id='56'
-													style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">중형견</p>
-												<p data-brackets-id='57'
-													style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">7~14.9키로</p>
-											</div>
-											<div data-brackets-id='58'
-												style="display: flex; flex-direction: row">
-												<div data-brackets-id='59'
-													style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
-													<p data-brackets-id='60'
-														style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">60포인트</p>
-												</div>
-												<div data-brackets-id='61'
-													style="display: flex; flex-direction: column; align-items: center; width: 62px">
-													<p data-brackets-id='62'
-														style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">200포인트</p>
-												</div>
-											</div>
-										</div>
-										<div data-brackets-id='63'
-											style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 14px">
-											<div data-brackets-id='64'
-												style="display: flex; flex-direction: row; align-items: center; height: 24px">
-												아이콘자리
-												<p data-brackets-id='66'
-													style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">대형견</p>
-												<p data-brackets-id='67'
-													style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">15키로
-													이상</p>
-											</div>
-											<div data-brackets-id='68'
-												style="display: flex; flex-direction: row">
-												<div data-brackets-id='69'
-													style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
-													<p data-brackets-id='70'
-														style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">65포인트</p>
-												</div>
-												<div data-brackets-id='71'
-													style="display: flex; flex-direction: column; align-items: center; width: 62px">
-													<p data-brackets-id='72'
-														style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">250포인트</p>
-												</div>
-											</div>
-										</div>
-										<div data-brackets-id='73'
-											style="width: 310px; height: 1px; background-color: #EBEBEB; margin: 32px 0"></div>
-										<div data-brackets-id='74'
-											style="display: flex; flex-direction: row; justify-content: space-between">
-											<p data-brackets-id='75'
-												style="font-family: Noto Sans KR, sans-serif; font-size: 14px; color: #81DAD6">풀타임
-												09:00~20:00</p>
-											<div data-brackets-id='76'
-												style="display: flex; flex-direction: column; justify-content: space-between">
-												<p data-brackets-id='77'
-													style="font-size: 13px; color: #81DAD6">400포인트</p>
-											</div>
-										</div>
+										<button class="btn btn-primary text-white apply">신청하기</button>
 									</div>
 
 									<div class="mb-5">
@@ -601,6 +489,27 @@
 				</c:forEach>
 			</c:forEach>
 			$(".price span").html(point*(duration+1));
+		})
+	</script>
+	<script>
+		$(function(){
+			$(".apply").on("click",function(){
+				$.ajax({
+					url: "/mb/apply",
+					type: "post",
+					dataType: "json",
+					data:{mb_seq:"${mlist.mb_seq}",
+						mb_writer:"${mlist.mb_writer}"}
+				}).done(function(resp){
+					console.log(resp.re);
+					if(resp.re == 'false'){
+						alert("다시 확인하세요.");
+					}
+					if(resp.re == 'true'){
+						alert("신청완료하였습니다.");
+					}
+				})
+			})
 		})
 	</script>
 </body>
