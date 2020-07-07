@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import kh.pet.dto.ReviewDTO;
@@ -26,9 +25,9 @@ public class ReviewDAO {
 	}
 	
 	public int delete(int rw_seq, String rw_parent_seq)throws Exception{
-		Map<String, Object> param = new HashMap<>();
+		Map<String, Integer> param = new HashMap<String, Integer>();
 		param.put("rw_seq", rw_seq);
-		param.put("rw_parent_seq", rw_parent_seq);
+		//param.put("rw_parent_seq", rw_parent_seq);
 		return mybatis.delete("Review.delete",param);
 	}
 	

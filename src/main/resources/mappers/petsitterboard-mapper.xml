@@ -5,7 +5,7 @@
 	<insert id="insert">
 		insert into petsitter_board
 		(psb_seq,psb_title,psb_writer,psb_contents,psb_thumb,psb_service,psb_start_day,psb_end_day,psb_time,psb_petType)
-		values (#{psb_seq},#{psb_title},#{psb_writer},#{psb_contents},#{psb_thumb},#{psb_service},#{psb_start_day},#{psb_end_day},#{psb_time},#{psb_petType})
+		values (#{psb_seq},#{psb_title},#{psb_writer},#{psb_contents},#{psb_thumb},#{psb_service},#{psb_start_day,jdbcType=VARCHAR},#{psb_end_day,jdbcType=VARCHAR},#{psb_time},#{psb_petType})
 	</insert>
 	
 	<select id="selectBoard" resultType="kh.pet.dto.TotboardDTO">
@@ -24,9 +24,14 @@
 		select * from petsitter_board order by psb_seq desc
 	</select>
 	
-	<select id="selectCnt" resultType="int">
+	<select id="selectCntAll" resultType="int">
 		select count(*) from petsitter_board
 	</select>
+	
+	<select id="selectCnt" resultType="int">
+		select count(*) from petsitter_board where psb_writer = #{psb_writer}
+	</select>
+
 	
 	<select id="selectByPage" resultType="kh.pet.dto.PetsitterboardDTO">
 		select * from (select petsitter_board.*, row_number () over (order by psb_seq desc) rnum from petsitter_board)where rnum between #{start} and #{end}

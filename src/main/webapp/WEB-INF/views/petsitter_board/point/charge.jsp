@@ -361,7 +361,7 @@
                 <li><i class="bx bx-check"></i> 라이브 방송으로 확인 가능 </li>
                 <li class="na"><i class="bx bx-x"></i> <span> 당일예약 가능</span></li>
               </ul>
-              <a href="/point/payment?mem_point=30000" class="get-started-btn">충전하기</a>
+              <a href="/point/payment?mem_point=1000" class="get-started-btn">충전하기</a>
             </div>
           </div>
 

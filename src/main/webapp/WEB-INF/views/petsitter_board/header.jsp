@@ -49,7 +49,7 @@
 										
 									</ul></li>
 								<li><a href="/board/outputList?cpage=1"><span>Reserve</span></a></li>
-								<li><a href="about.html"><span>About</span></a></li>
+								<li><a href="/petsitter/petsitter_register_form"><span>Register</span></a></li>
 								<li><a href="blog.html"><span>Blog</span></a></li>
 								<li><a href="contact.html"><span>Contact</span></a></li>
 							</ul>

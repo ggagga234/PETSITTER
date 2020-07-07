@@ -21,23 +21,26 @@ public class PetsitterboardService {
 		return psbdao.selectNextSeq();
 	}
 	
+	public int selectCnt(String psb_writer) throws Exception{
+		System.out.println("service에서:"+psb_writer);
+		return psbdao.selectCnt(psb_writer);
+	}
+	
 	public int insert(TotboardDTO totdto) throws Exception{
-		
-		
 		return psbdao.insert(totdto);
 	}
 	
 	public List<PetsitterboardDTO> outputList(int cpage)throws Exception{
 		int start = cpage*PetSitterConfiguration.recordPerPage - (PetSitterConfiguration.recordPerPage-1);
 		int end = start +(PetSitterConfiguration.recordPerPage-1);
-		HashMap<String, Integer> page = new HashMap<>();
+		HashMap<String, Integer> page = new HashMap<String, Integer>();
 		 page.put("start", start);
 		 page.put("end", end);
 		 return psbdao.selectByPage(page);
 	}
 	
 	public String getPageNavi(int cpage)throws Exception{
-		int recordTotalCnt = psbdao.selectCnt();
+		int recordTotalCnt = psbdao.selectAllCnt();
 		int recordPerPage = 10;
 		int naviPerPage = 5;
 		int totalPage = 0;
@@ -52,9 +55,7 @@ public class PetsitterboardService {
 		else if(cpage>totalPage) {cpage=totalPage;}
 		
 		int startNavi = (cpage-1)/naviPerPage*naviPerPage+1;
-		System.out.println("네비시작:"+startNavi);
 		int endNavi = startNavi + (naviPerPage-1);
-		System.out.println("네비끝:"+endNavi);
 		
 		if(endNavi>totalPage) {endNavi=totalPage;}
 		 

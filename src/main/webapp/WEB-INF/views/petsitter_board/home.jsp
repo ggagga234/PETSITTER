@@ -54,7 +54,7 @@
 										
 									</ul></li>
 								<li><a href="/board/outputList"><span>Reserve</span></a></li>
-								<li><a href="about.html"><span>About</span></a></li>
+								<li><a href="/petsitter/petsitter_register_form"><span>Register</span></a></li>
 								<li><a href="blog.html"><span>Blog</span></a></li>
 								<li><a href="contact.html"><span>Contact</span></a></li>
 							</ul>
@@ -84,6 +84,8 @@
                 <h1 data-aos="fade-up">Find Nearby <span class="typed-words"></span></h1>
                 <p data-aos="fade-up" data-aos-delay="100">Happy moment with pet  <a href="https://localhost/" target="_blank"> DOG&CAT</a></p>
               </div>
+              <button id="register_btn" class="btn btn-primary text-#878786 btn-md px-5 font-weight-bold btn-md-block">펫시터 지원하기</button>
+              
             </div>
 
           </div>
@@ -96,6 +98,20 @@
 	    </div>	    
 		<script src="/resources/main/js/typed.js"></script>
 	 <script>
+	 $(function(){
+		 $("#register_btn").on("click",function(){
+			 if(${sessionScope.loginInfo.mem_type == '2'}){
+				 alert("이미 펫시터로 활동 중입니다. 마이페이지로 이동합니다.");
+				 location.href="/petsitter/outputSingle";
+			 } else if(${sessionScope.loginInfo.mem_type == '1'}){
+				 location.href="/petsitter/petsitter_register_form";
+			 } else if(${empty sessionScope.loginInfo.mem_type}){
+				 alert("로그인 / 회원가입 후 지원해주세요.");
+				 location.href="/member/login";
+			 }
+			 });
+		 })
+	 
       var typed = new Typed('.typed-words', {
       strings: ["Attractions"," Events"," Hotels", " Restaurants"],
       typeSpeed: 80,
