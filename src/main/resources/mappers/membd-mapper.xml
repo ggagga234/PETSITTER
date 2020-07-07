@@ -36,7 +36,7 @@
 </update>
 
 <update id="applyup">
-	update mem_board set mb_restatus='yes',mb_booker=#{mb_booker} where  mb_seq=#{mb_seq}
+	update mem_board set mb_restatus='yes',mb_booker=#{mb_booker},mb_point=#{mb_point} where  mb_seq=#{mb_seq}
 </update>
 
 <select id="getArticleCount" resultType="int">
@@ -51,8 +51,8 @@
 	delete mem_board where mb_seq=#{mb_seq}
 </delete>
 
-<select id="seqid" resultType="String">
-	select max(mb_seq) from mem_board where mb_writer=#{id}
+<select id="seqid" resultType="kh.pet.dto.MemboardDto">
+	select * from mem_board where mb_writer=#{id} order by 5 desc 
 </select>
 
 <select id="addselec" resultType="String">

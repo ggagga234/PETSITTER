@@ -488,18 +488,18 @@
 				}
 				</c:forEach>
 			</c:forEach>
+			
 			$(".price span").html(point*(duration+1));
-		})
-	</script>
-	<script>
-		$(function(){
+			
 			$(".apply").on("click",function(){
 				$.ajax({
 					url: "/mb/apply",
 					type: "post",
 					dataType: "json",
 					data:{mb_seq:"${mlist.mb_seq}",
-						mb_writer:"${mlist.mb_writer}"}
+						mb_writer:"${mlist.mb_writer}",
+						mb_point : point*(duration+1)
+						}
 				}).done(function(resp){
 					console.log(resp.re);
 					if(resp.re == 'false'){
@@ -510,6 +510,7 @@
 					}
 				})
 			})
+			
 		})
 	</script>
 </body>

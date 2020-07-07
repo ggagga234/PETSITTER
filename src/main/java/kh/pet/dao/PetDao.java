@@ -65,9 +65,9 @@ public class PetDao {
 		return mybatis.delete("membd.deleteboard", mdto);
 	}
 	
-	public String seqid(String id) {
+	public List<MemboardDto> seqid(String id) {
 		System.out.println(id);
-		return mybatis.selectOne("membd.seqid",id);
+		return mybatis.selectList("membd.seqid",id);
 	}
 	
 	public String addselec(String id) {

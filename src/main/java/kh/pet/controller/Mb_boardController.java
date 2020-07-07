@@ -57,8 +57,9 @@ public class Mb_boardController {
 	public String redlist(Model m,MemboardDto mbdto) {
 		MemberDTO mdto = (MemberDTO)this.session.getAttribute("loginInfo");
 		String add = service.addselec(mdto.getMem_id());
-		String mb_seq = service.seqid(mdto.getMem_id());
-		MemboardDto mlist = service.redlist(mb_seq);
+		List<MemboardDto> dtolist  = service.seqid(mdto.getMem_id());
+		System.out.println(dtolist.get(0).getMb_seq());
+		MemboardDto mlist = service.redlist(dtolist.get(0).getMb_seq());
 		String[] servicearr = mlist.getMb_service().split(",");
 		String[] timearr = mlist.getMb_time().split(",");
 		String[] petnamearr = mlist.getMb_pet_name().split(",");
