@@ -24,6 +24,7 @@ public class PetDao {
 	}
 	
 	public MemboardDto redlist(String seq){
+		System.out.println(seq);
 		return mybatis.selectOne("membd.redlist",seq);
 	}
 	
@@ -47,6 +48,10 @@ public class PetDao {
 		return mybatis.update("membd.Memboardupdate", mdto);
 	}
 	
+	public int applyup(MemboardDto mbdto) {
+		System.out.println(mbdto);
+		return mybatis.update("membd.applyup",mbdto);
+	}
 	
 	public List<MemboardDto> mb_boardList(Map<String,Integer> con){
 		return mybatis.selectList("membd.mb_boardList",con);

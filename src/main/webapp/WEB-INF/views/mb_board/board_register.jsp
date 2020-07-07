@@ -178,7 +178,7 @@
 									<div class="title">
 										<h3>제목</h3>
 										<div contenteditable="true" id="title"></div>
-										<input type="hidden" name="mb_title" id="mb_title">
+										<input type="hidden" name="mb_title" id="mb_title" required>
 									</div>
 								</div>
 							</div>
@@ -260,7 +260,7 @@
 								<div class="lh-content">
 									<h3>특이사항</h3>
 									<div contenteditable="true" id="uniqueness"></div>
-									<input type="hidden" name="mb_unique" id="mb_unique">
+									<input type="hidden" name="mb_unique" id="mb_unique" required>
 								</div>
 							</div>
 							<div class="col-12 mt-5 text-center"></div>
@@ -338,6 +338,123 @@
 											<button class="btn btn-primary text-white save">등록하기</button>
 										</div>
 									</div>
+									
+									<hr class="mb-4">
+                     <h3 class="h5 text-black mb-3 " style="text-align: center">
+                        가격 안내<i class="icofont-money"></i>
+                     </h3>
+                     <div id="pricing" style="text-align: center">
+                     
+                     <div data-brackets-id='33'
+                              style="width: 100%; border-radius: 8px; border: 1px solid #DFE3EA; box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.07); padding: 15px 15px; margin-top: 38px; margin-bottom: 38px">
+                              <div data-brackets-id='34'
+                                 style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+                                 <p data-brackets-id='35'
+                                    style="font-size: 17px; font-weight: 600; letter-spacing: -0.2px; line-height: 25px; color: #81DAD6">이용 요금</p>
+                                 <div data-brackets-id='36'
+                                    style="display: flex; align-items: center; flex-direction: row">
+                                    <div data-brackets-id='37'
+                                       style="display: flex; flex-direction: row; align-items: center; margin-right: 8px">
+                                       <p data-brackets-id='38'
+                                          style="font-size: 13px; line-height: 18px; color: #81DAD6">2시간당</p>
+
+                                       <div data-brackets-id='39'
+                                          style="width: 1px; height: 15px; background-color: #ECEDF0; margin-left: 5px; margin-right: 5px">
+                                       </div>
+
+                                       <p data-brackets-id='40'
+                                          style="font-size: 13px; line-height: 18px; color: #81DAD6">AM,PM</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div data-brackets-id='43'
+                                 style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 31px; margin-bottom: 31px">
+                                 <div data-brackets-id='44'
+                                    style="display: flex; flex-direction: row; align-items: center; height: 24px">
+                                    <i class="icofont-dog-alt icofont-2x"></i>
+                                    <p data-brackets-id='46'
+                                       style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">소</p>
+                                    <p data-brackets-id='47'
+                                       style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">7키로 미만</p>
+                                 </div>
+                                 <div data-brackets-id='48'
+                                    style="display: flex; flex-direction: row">
+                                    <div data-brackets-id='49'
+                                       style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
+                                       <p data-brackets-id='50'
+                                          style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">50포인트</p>
+                                    </div>
+                                    <div data-brackets-id='51'
+                                       style="display: flex; flex-direction: column; align-items: center; width: 62px">
+                                       <p data-brackets-id='52'
+                                          style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">150포인트</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div data-brackets-id='53'
+                                 style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 14px; margin-bottom: 31px">
+                                 <div data-brackets-id='54'
+                                    style="display: flex; flex-direction: row; align-items: center; height: 24px">
+                                    <i class="icofont-dog-alt icofont-3x"></i>
+                                    <p data-brackets-id='56'
+                                       style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">중</p>
+                                    <p data-brackets-id='57'
+                                       style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">7~14.9키로</p>
+                                 </div>
+                                 <div data-brackets-id='58'
+                                    style="display: flex; flex-direction: row">
+                                    <div data-brackets-id='59'
+                                       style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
+                                       <p data-brackets-id='60'
+                                          style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">60포인트</p>
+                                    </div>
+                                    <div data-brackets-id='61'
+                                       style="display: flex; flex-direction: column; align-items: center; width: 62px">
+                                       <p data-brackets-id='62'
+                                          style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">200포인트</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div data-brackets-id='63'
+                                 style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 14px">
+                                 <div data-brackets-id='64'
+                                    style="display: flex; flex-direction: row; align-items: center; height: 24px">
+                                    <i class="icofont-dog-alt icofont-4x"></i>
+                                    <p data-brackets-id='66'
+                                       style="font-size: 15px; line-height: 19px; color: #81DAD6; margin-left: 10px">대</p>
+                                    <p data-brackets-id='67'
+                                       style="font-size: 12px; line-height: 17px; color: #999999; margin-left: 12px">15키로  이상</p>
+                                 </div>
+                                 <div data-brackets-id='68'
+                                    style="display: flex; flex-direction: row">
+                                    <div data-brackets-id='69'
+                                       style="display: flex; align-items: center; width: 62px; flex-direction: column; margin-right: 12px">
+                                       <p data-brackets-id='70'
+                                          style="font-size: 14px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">65포인트</p>
+                                    </div>
+                                    <div data-brackets-id='71'
+                                       style="display: flex; flex-direction: column; align-items: center; width: 62px">
+                                       <p data-brackets-id='72'
+                                          style="font-size: 12px; letter-spacing: 0.5px; line-height: 20px; color: #81DAD6">250포인트</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div data-brackets-id='73'
+                                 style="width: 310px; height: 1px; background-color: #EBEBEB; margin: 32px 0"></div>
+                              <div data-brackets-id='74'
+                                 style="display: flex; flex-direction: row; justify-content: space-between">
+                                 <p data-brackets-id='75'
+                                    style="font-family: Noto Sans KR, sans-serif; font-size: 14px; color: #81DAD6">풀타임
+                                    09:00~20:00</p>
+                                 <div data-brackets-id='76'
+                                    style="display: flex; flex-direction: column; justify-content: space-between">
+                                    <p data-brackets-id='77'
+                                       style="font-size: 13px; color: #81DAD6">400포인트</p>
+                                 </div>
+                              </div>
+                           </div>
+									
+									
 									<div class="mb-5">
 										<div id="map" style="width: 100%; height: 350px;"></div>
 									</div>

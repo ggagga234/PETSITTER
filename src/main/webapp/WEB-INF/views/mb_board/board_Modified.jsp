@@ -595,6 +595,21 @@
 				$("#mb_endday").val(end_day);
 
 			});
+			$(".selectime").on("click",function(){
+				if($(this).prop("checked") == true && $("#am").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#full").prop("checked",false);
+				}
+				if($(this).prop("checked") == true && $("#pm").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#full").prop("checked",false);
+				}
+				if($(this).prop("checked") == true && $("#full").prop("checked") == true){
+					$(".ba").prop("checked",false);
+					$("#am").prop("checked",false);
+					$("#pm").prop("checked",false);
+				}	
+			})
 		})
 	</script>
 
