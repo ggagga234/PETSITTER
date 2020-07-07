@@ -15,7 +15,7 @@ $(function(){
                 ],
                 borderWidth: 1
             },
-                      {
+            {
                 label: '저번 주',
                 data: [60, 50, 70, 80, 40, 90],
                 backgroundColor: [

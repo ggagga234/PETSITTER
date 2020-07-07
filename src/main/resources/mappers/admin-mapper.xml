@@ -2,15 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Admin">
 	
+	<!--baord managemnet  -->
+	
 	<update id="board_state">
-		update ${boardType} set mb_boardstatus = #{state} where mb_seq = ${seq}
+		update ${boardType} set mb_boardstatus = #{state} where mb_seq = #{seq}
 	</update>
 	
+	<!-- petsitter management -->
 	<select id="petsitter" resultType="kh.pet.dto.PetsitterDTO">
 		select p.ps_id, p.ps_age from member m, petsitter p where mem_id=ps_id and m.mem_type=1
 	</select>
 	
 	<update id="petaccept">
-		update member set mem_type = #{mem_type}
+		update member set mem_type = 2 where mem_id = #{value}
 	</update>
+	<!-- memeber management  -->
+	<select id="memberlist" resultType="kh.pet.dto.MemberDTO">
+	 select * from (select member.* , row_number() over(order by MEM_JOIN_DATE desc)rnum from member) where rnum between ${start} and ${end}
+	</select>
+	
+	<select id="membercount" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<!--reservation management -->
+	<select id="rememboard" resultType="kh.pet.dto.MemboardDto">
+		select * from mem_board where MB_RESTATUS = 'yes'
+	</select>
+	
 </mapper>

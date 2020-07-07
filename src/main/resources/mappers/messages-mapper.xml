@@ -21,14 +21,17 @@
 		<result property="msg_status" column="smsg_status"/>
 	</resultMap>	
 	
+	
 	<select id="sendmessagelist" resultType="kh.pet.dto.MessageDTO" resultMap="sendmessage">
 		select * from (select send_message.* , row_number() over(order by smsg_seq desc)rnum from send_message where smsg_sender=#{id}) where rnum between ${start} and ${end}
 	</select>
 	
 	
+	
 	<select id="sendgetCount" resultType="int">
 		select count(*) from send_message where smsg_sender=#{value}
 	</select>
+	
 	
 	<select id="recievemassagelist" resultType="kh.pet.dto.MessageDTO" resultMap="recievemessage">
 		select * from (select recieve_message.* , row_number() over(order by rmsg_seq desc)rnum from recieve_message where rmsg_reciever=#{id}) where rnum between ${start} and ${end}

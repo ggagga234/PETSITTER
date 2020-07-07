@@ -114,17 +114,24 @@
 	                                    	<div class= col-3>신청서내용</div>
 	                                    	<div class= col-3>수락/거절</div>      	    
 	                                    </div>
-	                                    <c:forEach var="i" items="${petsitter}">
-		                                    <div class="col-12">
-		                                    	<div class= col-3>${i.ps_id}</div>
-		                                    	<div class= col-3>${i.ps_age}</div>
-		                                    	<div class= col-3><a href="#">내용 보기</a></div>
-		                                    	<div class= col-3>
-		                                    		<input type="button" value="수락" class="accept" >
-		                                    		<input type="button" value="거절" class="cencel" >
-		                                    	</div> 
-		                                    </div>
+	                                    <hr style="width: 100%;">
+	                                    <div class="row">
+	                                    <c:forEach var="i" items="${petsitter}">        
+	                                    	<div class= col-3>${i.ps_id}</div>
+	                                    	<div class= col-3>${i.ps_age}</div>
+	                                    	<div class= col-3><a href="#">내용 보기</a></div>
+	                                    	<div class= col-3>
+	                                    		<input type="button" value="수락" class="accept" id="${i.ps_id}">
+	                                    		<input type="button" value="거절" class="cencel" >
+	                                    	</div> 
 	                                    </c:forEach>
+	                                    </div>
+	          							<script>
+	          								$(".accept").on("click",function(){
+	          									var id = $(this).attr("id");
+	          									location.href="/admin/petaccept?id="+id;
+	          								})
+	          							</script>
                                     </div>
                                 </div>
                             </div>

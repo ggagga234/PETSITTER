@@ -133,10 +133,9 @@
 				 }); 
 			  	
 			  $("#ps_img").on('change', function(){
-		          readURL(this);
 		      });
 			  $("#ps_img").on('change', function(){
-		          readURL(this);
+
 		      });
 			  
 			$("#register_frm").bind('submit',function(){

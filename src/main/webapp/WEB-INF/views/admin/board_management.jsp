@@ -140,7 +140,7 @@
 										<div class="col-4 col-lg">${i.mb_date}</div>
 										<div class="col-4 col-lg">
 											<c:choose>
-												<c:when test="${i.mb_boardstatus eq 'no'}">통상</c:when>
+												<c:when test="${i.mb_boardstatus eq 'yes'}">통상</c:when>
 												<c:otherwise>정지</c:otherwise>
 											</c:choose>
 										</div>
@@ -149,7 +149,7 @@
 											<input type="text" value="${i.mb_seq}" name=seq style="display: none">
 												<select name="state"
 													class="btn btn-info dropdown-toggle btn-sm">	
-													<option value="no">통상</option>
+													<option value="yes">통상</option>
 													<option value="stop">정지</option>
 													<option value="delete">삭제</option>
 												</select>
