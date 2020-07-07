@@ -66,4 +66,10 @@ public class HomeController {
 	public String signup() {
 		return "member/signup";
 	}
+	
+	@RequestMapping("/message")
+	public String message() {
+		return "home2";
+	}
+	
 }

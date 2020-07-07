@@ -8,9 +8,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kh.pet.dto.MemboardDto;
+import kh.pet.dto.PetsitterDTO;
 import kh.pet.service.AdminService;
 import kh.pet.service.Petservice;
 
@@ -44,7 +46,9 @@ public class AdminController {
 	}
 	
 	@RequestMapping("petsiter")
-	public String go_admin_petsiter() {
+	public String go_admin_petsiter(Model m) {
+		List<PetsitterDTO> pet =  admin_service.petsitter();
+		m.addAttribute("petsitter", pet);
 		return "admin/pet_siter_management";
 	}
 	
